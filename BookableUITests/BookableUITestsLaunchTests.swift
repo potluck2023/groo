@@ -1,6 +1,6 @@
 //
-//  bookableUITestsLaunchTests.swift
-//  bookableUITests
+//  BookableUITestsLaunchTests.swift
+//  BookableUITests
 //
 //  Created by 이예주 on 2023/04/02.
 //
