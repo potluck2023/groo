@@ -1,5 +1,5 @@
 //
-//  RegisterPage.swift
+//  PasswordResetPage.swift
 //  Bookable
 //
 //  Created by 이예주 on 2023/04/02.
@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-struct RegisterPage: View {
-    @State private var name: String = ""
-    @State private var email: String = ""
+struct PasswordResetPage: View {
     @State private var password: String = ""
     @State private var passwordConfirm: String = ""
     
@@ -17,38 +15,25 @@ struct RegisterPage: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Text("회원 가입")
+            Text("새 비밀번호")
                 .font(.system(size: 28, weight: .semibold))
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top, 49)
                 .padding(.bottom, 8)
+                .padding(.top, 49)
             Text("Lorem ipsum dolor sit amet\nconsectetur. Enim neque leo\nconsequat sit eget.")
                 .foregroundColor(Color(hex: 0xB8B8B8))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.bottom, 55)
-            
             VStack(spacing: 0) {
-                AccountTextField(text: $name, focusField: _focusField, field: .name)
-                    .padding(.bottom)
-                Text("이미 사용 중인 닉네임입니다. 다른 닉네임을 입력해 주세요.")
-                    .fixedSize(horizontal: false, vertical: true)
-                    .font(.system(size: 14))
-                    .foregroundColor(Color(hex: 0xD3D3D3))
-                AccountTextField(text: $email, focusField: _focusField, field: .email)
-                    .padding(.vertical)
-                Text("이미 사용 중인 이메일 주소입니다. 다른 이메일 주소를 입력해 주세요.")
-                    .fixedSize(horizontal: false, vertical: true)
-                    .font(.system(size: 14))
-                    .foregroundColor(Color(hex: 0xD3D3D3))
                 AccountTextField(text: $password, focusField: _focusField, field: .password)
-                    .padding(.vertical)
+                    .padding(.bottom)
                 AccountTextField(text: $passwordConfirm, focusField: _focusField, field: .passwordConfirm)
-                    .padding(.vertical)
+                    .padding(.bottom)
                 Button {
-                    // TODO: send email
+                    // TODO: save
                 } label: {
-                    Text("인증메일 보내기")
+                    Text("저장")
                         .fontWeight(.semibold)
                         .foregroundColor(Color(hex: 0x202020))
                         .frame(height: 46)
@@ -61,6 +46,7 @@ struct RegisterPage: View {
             Spacer()
         }
         .padding(.horizontal, 49)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
             Color.background
                 .edgesIgnoringSafeArea(.all)
@@ -71,8 +57,8 @@ struct RegisterPage: View {
     }
 }
 
-struct RegisterPage_Previews: PreviewProvider {
+struct PasswordResetPage_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterPage()
+        PasswordResetPage()
     }
 }

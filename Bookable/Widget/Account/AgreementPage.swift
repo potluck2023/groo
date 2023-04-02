@@ -15,7 +15,7 @@ struct AgreementPage: View {
                 .font(.system(size: 28, weight: .semibold))
                 .foregroundColor(Color.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top, 104)
+                .padding(.top, 49)
                 .padding(.horizontal, 12)
             Spacer()
             

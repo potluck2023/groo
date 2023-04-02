@@ -40,7 +40,7 @@ struct LoginPage: View {
                 // TODO: login
             } label: {
                 Text("로그인")
-                    .font(.system(size: 16, weight: .bold))
+                    .font(.system(size: 16, weight: .semibold))
                     .frame(height: 21)
                     .foregroundColor(Color(hex: 0x202020))
                     .frame(height: 46)
@@ -69,6 +69,10 @@ struct LoginPage: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
             Color.background
+                .edgesIgnoringSafeArea(.all)
+                .onTapGesture {
+                    focusField = nil
+                }
         )
     }
 }

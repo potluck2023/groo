@@ -12,6 +12,8 @@
 		633A5BDF29D9919D0073FF9D /* RegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A5BDE29D9919D0073FF9D /* RegisterPage.swift */; };
 		633A5BE129D9943B0073FF9D /* AgreementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A5BE029D9943B0073FF9D /* AgreementPage.swift */; };
 		633A5BE429D9954B0073FF9D /* AccountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A5BE329D9954B0073FF9D /* AccountTextField.swift */; };
+		633A5BE629D999890073FF9D /* PasswordFindPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A5BE529D999890073FF9D /* PasswordFindPage.swift */; };
+		633A5BE829D99A7C0073FF9D /* PasswordResetPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A5BE729D99A7C0073FF9D /* PasswordResetPage.swift */; };
 		63DC910F29D986E90048D0AC /* BookableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC910E29D986E90048D0AC /* BookableApp.swift */; };
 		63DC911129D986E90048D0AC /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC911029D986E90048D0AC /* LoginPage.swift */; };
 		63DC911329D986EA0048D0AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DC911229D986EA0048D0AC /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		633A5BDE29D9919D0073FF9D /* RegisterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPage.swift; sourceTree = "<group>"; };
 		633A5BE029D9943B0073FF9D /* AgreementPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementPage.swift; sourceTree = "<group>"; };
 		633A5BE329D9954B0073FF9D /* AccountTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTextField.swift; sourceTree = "<group>"; };
+		633A5BE529D999890073FF9D /* PasswordFindPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFindPage.swift; sourceTree = "<group>"; };
+		633A5BE729D99A7C0073FF9D /* PasswordResetPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetPage.swift; sourceTree = "<group>"; };
 		63DC910B29D986E90048D0AC /* Bookable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DC910E29D986E90048D0AC /* BookableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookableApp.swift; sourceTree = "<group>"; };
 		63DC911029D986E90048D0AC /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				63DC911029D986E90048D0AC /* LoginPage.swift */,
 				633A5BDE29D9919D0073FF9D /* RegisterPage.swift */,
 				633A5BE029D9943B0073FF9D /* AgreementPage.swift */,
+				633A5BE529D999890073FF9D /* PasswordFindPage.swift */,
+				633A5BE729D99A7C0073FF9D /* PasswordResetPage.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -328,9 +334,11 @@
 			files = (
 				633A5BDF29D9919D0073FF9D /* RegisterPage.swift in Sources */,
 				633A5BE429D9954B0073FF9D /* AccountTextField.swift in Sources */,
+				633A5BE629D999890073FF9D /* PasswordFindPage.swift in Sources */,
 				633A5BD929D98BAD0073FF9D /* ColorExtension.swift in Sources */,
 				63DC911129D986E90048D0AC /* LoginPage.swift in Sources */,
 				633A5BDB29D98EAC0073FF9D /* ViewExtension.swift in Sources */,
+				633A5BE829D99A7C0073FF9D /* PasswordResetPage.swift in Sources */,
 				63DC910F29D986E90048D0AC /* BookableApp.swift in Sources */,
 				633A5BE129D9943B0073FF9D /* AgreementPage.swift in Sources */,
 			);
