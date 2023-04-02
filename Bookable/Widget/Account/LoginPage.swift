@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+class LoginViewModel: ObservableObject {
+    @Published var email: String = ""
+    @Published var password: String = ""
+}
+
 struct LoginPage: View {
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @StateObject private var viewModel = LoginViewModel()
     
     @FocusState private var focusField: AccountFocusField?
     
@@ -22,9 +26,9 @@ struct LoginPage: View {
                 .background(Color(hex: 0xD9D9D9))
                 .padding(.bottom, 24)
             
-            AccountTextField(text: $email, focusField: _focusField, field: .email)
+            AccountTextField(text: $viewModel.email, focusField: _focusField, field: .email)
             
-            AccountTextField(text: $password, focusField: _focusField, field: .password)
+            AccountTextField(text: $viewModel.password, focusField: _focusField, field: .password)
             
             Button {
                 // TODO: find password

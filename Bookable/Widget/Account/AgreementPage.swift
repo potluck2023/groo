@@ -7,7 +7,13 @@
 
 import SwiftUI
 
+class AgreementViewModel: ObservableObject {
+    
+}
+
 struct AgreementPage: View {
+    @StateObject private var viewModel = AgreementViewModel()
+    
     var body: some View {
         VStack(spacing: 0) {
             

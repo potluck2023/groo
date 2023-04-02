@@ -7,8 +7,12 @@
 
 import SwiftUI
 
+class PasswordFindViewModel: ObservableObject {
+    @Published var email: String = ""
+}
+
 struct PasswordFindPage: View {
-    @State private var email: String = ""
+    @StateObject private var viewModel = PasswordFindViewModel()
     
     @FocusState private var focusField: AccountFocusField?
     
@@ -25,7 +29,7 @@ struct PasswordFindPage: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.bottom, 55)
             VStack(spacing: 0) {
-                AccountTextField(text: $email, focusField: _focusField, field: .email)
+                AccountTextField(text: $viewModel.email, focusField: _focusField, field: .email)
                     .padding(.bottom)
                 Text("가입된 적 없는 이메일 주소입니다. 이메일 주소를 다시 한번 확인해주세요")
                     .fixedSize(horizontal: false, vertical: true)

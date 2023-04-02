@@ -7,11 +7,15 @@
 
 import SwiftUI
 
+class RegisterViewModel: ObservableObject {
+    @Published var name: String = ""
+    @Published var email: String = ""
+    @Published var password: String = ""
+    @Published var passwordConfirm: String = ""
+}
+
 struct RegisterPage: View {
-    @State private var name: String = ""
-    @State private var email: String = ""
-    @State private var password: String = ""
-    @State private var passwordConfirm: String = ""
+    @StateObject private var viewModel = RegisterViewModel()
     
     @FocusState private var focusField: AccountFocusField?
     
@@ -29,21 +33,21 @@ struct RegisterPage: View {
                 .padding(.bottom, 55)
             
             VStack(spacing: 0) {
-                AccountTextField(text: $name, focusField: _focusField, field: .name)
+                AccountTextField(text: $viewModel.name, focusField: _focusField, field: .name)
                     .padding(.bottom)
                 Text("이미 사용 중인 닉네임입니다. 다른 닉네임을 입력해 주세요.")
                     .fixedSize(horizontal: false, vertical: true)
                     .font(.system(size: 14))
                     .foregroundColor(Color(hex: 0xD3D3D3))
-                AccountTextField(text: $email, focusField: _focusField, field: .email)
+                AccountTextField(text: $viewModel.email, focusField: _focusField, field: .email)
                     .padding(.vertical)
                 Text("이미 사용 중인 이메일 주소입니다. 다른 이메일 주소를 입력해 주세요.")
                     .fixedSize(horizontal: false, vertical: true)
                     .font(.system(size: 14))
                     .foregroundColor(Color(hex: 0xD3D3D3))
-                AccountTextField(text: $password, focusField: _focusField, field: .password)
+                AccountTextField(text: $viewModel.password, focusField: _focusField, field: .password)
                     .padding(.vertical)
-                AccountTextField(text: $passwordConfirm, focusField: _focusField, field: .passwordConfirm)
+                AccountTextField(text: $viewModel.passwordConfirm, focusField: _focusField, field: .passwordConfirm)
                     .padding(.vertical)
                 Button {
                     // TODO: send email

@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+class PasswordResetViewModel: ObservableObject {
+    @Published var password: String = ""
+    @Published var passwordConfirm: String = ""
+}
+
 struct PasswordResetPage: View {
-    @State private var password: String = ""
-    @State private var passwordConfirm: String = ""
+    @StateObject private var viewModel = PasswordResetViewModel()
     
     @FocusState private var focusField: AccountFocusField?
     
@@ -26,9 +30,9 @@ struct PasswordResetPage: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.bottom, 55)
             VStack(spacing: 0) {
-                AccountTextField(text: $password, focusField: _focusField, field: .password)
+                AccountTextField(text: $viewModel.password, focusField: _focusField, field: .password)
                     .padding(.bottom)
-                AccountTextField(text: $passwordConfirm, focusField: _focusField, field: .passwordConfirm)
+                AccountTextField(text: $viewModel.passwordConfirm, focusField: _focusField, field: .passwordConfirm)
                     .padding(.bottom)
                 Button {
                     // TODO: save
