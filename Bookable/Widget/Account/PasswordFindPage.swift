@@ -18,7 +18,7 @@ struct PasswordFindPage: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Text("비밀번호 초기화")
+            Text("passwordReset")
                 .font(.system(size: 28, weight: .semibold))
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -31,7 +31,7 @@ struct PasswordFindPage: View {
             VStack(spacing: 0) {
                 AccountTextField(text: $viewModel.email, focusField: _focusField, field: .email)
                     .padding(.bottom)
-                Text("가입된 적 없는 이메일 주소입니다. 이메일 주소를 다시 한번 확인해주세요")
+                Text("emailNotRegisteredError")
                     .fixedSize(horizontal: false, vertical: true)
                     .font(.system(size: 14))
                     .foregroundColor(Color(hex: 0xD3D3D3))
@@ -39,14 +39,11 @@ struct PasswordFindPage: View {
                 Button {
                     // TODO: send email
                 } label: {
-                    Text("인증메일 보내기")
+                    Text("sendEmail")
                         .fontWeight(.semibold)
-                        .foregroundColor(Color(hex: 0x202020))
-                        .frame(height: 46)
-                        .frame(maxWidth: .infinity)
-                        .background(RoundedRectangle(cornerRadius: 40).fill(.white))
                 }
                 .padding(.top)
+                .buttonStyle(RoundedButtonStyle())
             }
             .padding(.horizontal, 6)
             Spacer()

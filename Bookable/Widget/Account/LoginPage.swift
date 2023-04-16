@@ -30,44 +30,16 @@ struct LoginPage: View {
             
             AccountTextField(text: $viewModel.password, focusField: _focusField, field: .password)
             
-            Button {
-                // TODO: find password
-            } label: {
-                Text("비밀번호를 잊으셨나요?")
-                    .font(.system(size: 14))
-                    .foregroundColor(Color(hex: 0x989898))
-                    .frame(height: 19)
-            }
-            .frame(maxWidth: .infinity, alignment: .trailing)
+            loginButton
             
-            Button {
-                // TODO: login
-            } label: {
-                Text("로그인")
-                    .font(.system(size: 16, weight: .semibold))
-                    .frame(height: 21)
-                    .foregroundColor(Color(hex: 0x202020))
-                    .frame(height: 46)
-                    .frame(maxWidth: .infinity)
-                    .background(
-                        RoundedRectangle(cornerRadius: 49)
-                            .fill(Color.white)
-                    )
-            }
+            passwordFindLink
             
-            Text("또는")
+            Text("or")
                 .font(.system(size: 12))
                 .frame(height: 16)
                 .foregroundColor(Color(hex: 0xBBBBBB))
             
-            Button {
-                // TODO: register
-            } label: {
-                Text("회원 가입하기")
-                    .font(.system(size: 16, weight: .bold))
-                    .frame(height: 21)
-                    .foregroundColor(Color.white)
-            }
+            registerLink
         }
         .fixedSize(horizontal: true, vertical: false)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -78,6 +50,39 @@ struct LoginPage: View {
                     focusField = nil
                 }
         )
+    }
+    
+    private var loginButton: some View {
+        Button {
+            // TODO: login
+        } label: {
+            Text("login")
+                .font(.system(size: 16, weight: .semibold))
+        }
+        .buttonStyle(RoundedButtonStyle())
+    }
+    
+    private var registerLink: some View {
+        NavigationLink {
+            RegisterPage()
+        } label: {
+            Text("goToRegister")
+                .font(.system(size: 16, weight: .bold))
+                .frame(height: 21)
+                .foregroundColor(Color.white)
+        }
+    }
+    
+    private var passwordFindLink: some View {
+        NavigationLink {
+            PasswordFindPage()
+        } label: {
+            Text("forgotPassword?")
+                .font(.system(size: 14))
+                .foregroundColor(Color(hex: 0x989898))
+                .frame(height: 19)
+        }
+        .frame(maxWidth: .infinity, alignment: .trailing)
     }
 }
 

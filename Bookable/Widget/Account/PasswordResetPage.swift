@@ -19,7 +19,7 @@ struct PasswordResetPage: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Text("새 비밀번호")
+            Text("newPassword")
                 .font(.system(size: 28, weight: .semibold))
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -37,13 +37,10 @@ struct PasswordResetPage: View {
                 Button {
                     // TODO: save
                 } label: {
-                    Text("저장")
+                    Text("save")
                         .fontWeight(.semibold)
-                        .foregroundColor(Color(hex: 0x202020))
-                        .frame(height: 46)
-                        .frame(maxWidth: .infinity)
-                        .background(RoundedRectangle(cornerRadius: 40).fill(.white))
                 }
+                .buttonStyle(RoundedButtonStyle())
                 .padding(.top)
             }
             .padding(.horizontal, 6)

@@ -1,0 +1,51 @@
+/* 
+  Localizable.strings
+  Bookable
+
+  Created by 이예주 on 2023/04/16.
+  
+*/
+
+// MARK: Account
+"or" = "또는";
+
+"login" = "로그인";
+
+"register" = "회원 가입";
+
+"goToRegister" = "회원 가입하기";
+
+"forgotPassword?" = "비밀번호를 잊으셨나요?";
+
+"sendEmail" = "인증메일 보내기";
+
+"welcome000" = "000에 오신 것을\n 환영합니다";
+
+"allAgreement" = "전체동의";
+
+"required" = "필수";
+
+"termsOfService" = "서비스 이용약관 >";
+
+"privacyPolicy" = "개인정보 수집 및 이용동의 >";
+
+"next" = "다음";
+
+"passwordReset" = "비밀번호 초기화";
+
+"newPassword" = "새 비밀번호";
+
+"save" = "저장";
+
+"emailVerification" = "이메일 인증";
+
+"authCodeNotReceived" = "인증 코드를 받지 못하셨나요?";
+
+"ok" = "확인";
+
+// Error
+"nameDuplicatedError" = "이미 사용 중인 닉네임입니다. 다른 닉네임을 입력해 주세요.";
+
+"emailDuplicatedError" = "이미 사용 중인 이메일 주소입니다. 다른 이메일 주소를 입력해 주세요.";
+
+"emailNotRegisteredError" = "가입된 적 없는 이메일 주소입니다. 이메일 주소를 다시 한번 확인해주세요";

@@ -15,6 +15,9 @@
 		633A5BE629D999890073FF9D /* PasswordFindPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A5BE529D999890073FF9D /* PasswordFindPage.swift */; };
 		633A5BE829D99A7C0073FF9D /* PasswordResetPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A5BE729D99A7C0073FF9D /* PasswordResetPage.swift */; };
 		633A5BEC29D9A15B0073FF9D /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633A5BEB29D9A15B0073FF9D /* AccountRepository.swift */; };
+		63691A0A29EBDB8500EE2A2E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63691A0C29EBDB8500EE2A2E /* Localizable.strings */; };
+		63691A0F29EBE05700EE2A2E /* EmailVerificationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63691A0E29EBE05700EE2A2E /* EmailVerificationPage.swift */; };
+		63691A1229EBE38900EE2A2E /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63691A1129EBE38900EE2A2E /* ButtonStyle.swift */; };
 		63DC910F29D986E90048D0AC /* BookableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC910E29D986E90048D0AC /* BookableApp.swift */; };
 		63DC911129D986E90048D0AC /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC911029D986E90048D0AC /* LoginPage.swift */; };
 		63DC911329D986EA0048D0AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DC911229D986EA0048D0AC /* Assets.xcassets */; };
@@ -50,6 +53,10 @@
 		633A5BE529D999890073FF9D /* PasswordFindPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFindPage.swift; sourceTree = "<group>"; };
 		633A5BE729D99A7C0073FF9D /* PasswordResetPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetPage.swift; sourceTree = "<group>"; };
 		633A5BEB29D9A15B0073FF9D /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
+		63691A0B29EBDB8500EE2A2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		63691A0D29EBDBA900EE2A2E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		63691A0E29EBE05700EE2A2E /* EmailVerificationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationPage.swift; sourceTree = "<group>"; };
+		63691A1129EBE38900EE2A2E /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		63DC910B29D986E90048D0AC /* Bookable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DC910E29D986E90048D0AC /* BookableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookableApp.swift; sourceTree = "<group>"; };
 		63DC911029D986E90048D0AC /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
@@ -100,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				633A5BDD29D991860073FF9D /* Account */,
+				63691A1029EBE36900EE2A2E /* Style */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -113,6 +121,7 @@
 				633A5BE029D9943B0073FF9D /* AgreementPage.swift */,
 				633A5BE529D999890073FF9D /* PasswordFindPage.swift */,
 				633A5BE729D99A7C0073FF9D /* PasswordResetPage.swift */,
+				63691A0E29EBE05700EE2A2E /* EmailVerificationPage.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -140,9 +149,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		63691A1029EBE36900EE2A2E /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				63691A1129EBE38900EE2A2E /* ButtonStyle.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
 		63DC910229D986E90048D0AC = {
 			isa = PBXGroup;
 			children = (
+				63691A0C29EBDB8500EE2A2E /* Localizable.strings */,
 				63DC910D29D986E90048D0AC /* Bookable */,
 				63DC911E29D986EA0048D0AC /* BookableTests */,
 				63DC912829D986EA0048D0AC /* BookableUITests */,
@@ -286,6 +304,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 63DC910229D986E90048D0AC;
 			productRefGroup = 63DC910C29D986E90048D0AC /* Products */;
@@ -305,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63DC911629D986EA0048D0AC /* Preview Assets.xcassets in Resources */,
+				63691A0A29EBDB8500EE2A2E /* Localizable.strings in Resources */,
 				63DC911329D986EA0048D0AC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,10 +375,12 @@
 				633A5BE429D9954B0073FF9D /* AccountTextField.swift in Sources */,
 				633A5BE629D999890073FF9D /* PasswordFindPage.swift in Sources */,
 				633A5BEC29D9A15B0073FF9D /* AccountRepository.swift in Sources */,
+				63691A0F29EBE05700EE2A2E /* EmailVerificationPage.swift in Sources */,
 				633A5BD929D98BAD0073FF9D /* ColorExtension.swift in Sources */,
 				63DC911129D986E90048D0AC /* LoginPage.swift in Sources */,
 				633A5BDB29D98EAC0073FF9D /* ViewExtension.swift in Sources */,
 				633A5BE829D99A7C0073FF9D /* PasswordResetPage.swift in Sources */,
+				63691A1229EBE38900EE2A2E /* ButtonStyle.swift in Sources */,
 				63DC910F29D986E90048D0AC /* BookableApp.swift in Sources */,
 				633A5BE129D9943B0073FF9D /* AgreementPage.swift in Sources */,
 			);
@@ -396,11 +418,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		63691A0C29EBDB8500EE2A2E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63691A0B29EBDB8500EE2A2E /* en */,
+				63691A0D29EBDBA900EE2A2E /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		63DC912D29D986EA0048D0AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -461,6 +496,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

@@ -17,7 +17,7 @@ struct AgreementPage: View {
     var body: some View {
         VStack(spacing: 0) {
             
-            Text("000에 오신 것을\n 환영합니다")
+            Text("welcome000")
                 .font(.system(size: 28, weight: .semibold))
                 .foregroundColor(Color.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -26,7 +26,7 @@ struct AgreementPage: View {
             Spacer()
             
             HStack(spacing: 0) {
-                Text("전체동의")
+                Text("allAgreement")
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(Color.white)
                 Spacer()
@@ -36,10 +36,10 @@ struct AgreementPage: View {
             .frame(height: 59)
             
             HStack(spacing: 16) {
-                Text("필수")
+                Text("required")
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(Color.white)
-                Text("서비스 이용약관 >")
+                Text("termsOfService")
                     .font(.system(size: 14))
                     .foregroundColor(Color(hex: 0xCDCDCD))
                 Spacer()
@@ -48,10 +48,10 @@ struct AgreementPage: View {
             .frame(height: 59)
             
             HStack(spacing: 16) {
-                Text("필수")
+                Text("required")
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(Color.white)
-                Text("개인정보 수집 및 이용동의 >")
+                Text("privacyPolicy")
                     .font(.system(size: 14))
                     .foregroundColor(Color(hex: 0xCDCDCD))
                 Spacer()
@@ -64,13 +64,10 @@ struct AgreementPage: View {
             Button {
                 // TODO: next
             } label: {
-                Text("다음")
-                    .foregroundColor(Color(hex: 0x757575))
+                Text("next")
                     .font(.system(size: 16, weight: .semibold))
-                    .frame(height: 46)
-                    .frame(maxWidth: .infinity)
-                    .background(RoundedRectangle(cornerRadius: 40).fill(Color(hex: 0x3A3A3A)))
             }
+            .buttonStyle(RoundedButtonStyle(fontColor: Color(hex: 0x757575), backgroundColor: Color(hex:0x3A3A3A)))
             .padding(.horizontal, 12)
         }
         .padding(.horizontal, 44)

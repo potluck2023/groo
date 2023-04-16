@@ -21,7 +21,7 @@ struct RegisterPage: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Text("회원 가입")
+            Text("register")
                 .font(.system(size: 28, weight: .semibold))
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -35,13 +35,13 @@ struct RegisterPage: View {
             VStack(spacing: 0) {
                 AccountTextField(text: $viewModel.name, focusField: _focusField, field: .name)
                     .padding(.bottom)
-                Text("이미 사용 중인 닉네임입니다. 다른 닉네임을 입력해 주세요.")
+                Text("nameDuplicatedError")
                     .fixedSize(horizontal: false, vertical: true)
                     .font(.system(size: 14))
                     .foregroundColor(Color(hex: 0xD3D3D3))
                 AccountTextField(text: $viewModel.email, focusField: _focusField, field: .email)
                     .padding(.vertical)
-                Text("이미 사용 중인 이메일 주소입니다. 다른 이메일 주소를 입력해 주세요.")
+                Text("emailDuplicatedError")
                     .fixedSize(horizontal: false, vertical: true)
                     .font(.system(size: 14))
                     .foregroundColor(Color(hex: 0xD3D3D3))
@@ -52,13 +52,10 @@ struct RegisterPage: View {
                 Button {
                     // TODO: send email
                 } label: {
-                    Text("인증메일 보내기")
+                    Text("sendEmail")
                         .fontWeight(.semibold)
-                        .foregroundColor(Color(hex: 0x202020))
-                        .frame(height: 46)
-                        .frame(maxWidth: .infinity)
-                        .background(RoundedRectangle(cornerRadius: 40).fill(.white))
                 }
+                .buttonStyle(RoundedButtonStyle())
                 .padding(.top)
             }
             .padding(.horizontal, 6)
