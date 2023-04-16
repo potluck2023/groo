@@ -64,7 +64,7 @@ struct LoginPage: View {
     
     private var registerLink: some View {
         NavigationLink {
-            RegisterPage()
+            AgreementPage()
         } label: {
             Text("goToRegister")
                 .font(.system(size: 16, weight: .bold))
