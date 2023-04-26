@@ -21,8 +21,12 @@ enum HomeType: CaseIterable {
     }
 }
 
+class HomeViewModel: ObservableObject {
+    @Published var homeType: HomeType = .main
+}
+
 struct HomePage: View {
-    @State private var homeType: HomeType = .main
+    @StateObject private var viewModel = HomeViewModel()
     
     var body: some View {
         Group {
@@ -31,17 +35,18 @@ struct HomePage: View {
                     content
                 }
             } else {
-                // Fallback on earlier versions
                 NavigationView {
                     content
                 }
             }
         }
+        .font(.notoSansKR(.bold))
     }
     
     private var content: some View {
         VStack(spacing: 32) {
             header
+                .font(.notoSansKR(.bold, size: 24))
             
             ScrollView {
                 VStack(spacing: 40) {
@@ -49,17 +54,21 @@ struct HomePage: View {
                         HStack(spacing: 13) {
                             VStack(spacing: 0) {
                                 Text("month")
-                                Text("1개월 >")
+                                Text("\(1)Month")
+                                    .font(.notoSansKR(.bold, size: 14))
                             }
                             .foregroundColor(.black)
                             .frame(width: 72, height: 72)
                             .background(Color(hex: 0xEFEFEF))
                             .cornerRadius(9)
                             
-                            HStack(spacing: 0) {
-                                Text("읽은 책")
+                            HStack(alignment: .bottom, spacing: 0) {
+                                Text("booksRead")
                                 Spacer()
-                                Text("178권")
+                                Text("178")
+                                    .font(.notoSansKR(.bold, size: 28))
+                                    .frame(maxHeight: 28)
+                                Text("books")
                             }
                             .padding(.vertical, 10)
                             .padding(.trailing, 12)
@@ -75,11 +84,12 @@ struct HomePage: View {
                         HStack(spacing: 14) {
                             VStack(spacing: 12) {
                                 HStack(spacing: 0) {
-                                    Text("나의 생각")
+                                    Text("myThought")
                                     Spacer()
                                     Text(">")
                                 }
                                 Text("개인적으로 이 만화를 보면서 책을 사랑하는 마음이 커졌다. 여우와 인간의 이야기를 통해 책이 가지는 매력과 그 중요성을 깨")
+                                    .font(.notoSansKR(.medium, size: 14))
                                     .lineLimit(4)
                                     .multilineTextAlignment(.leading)
                                 HStack(spacing: 0) {
@@ -87,6 +97,7 @@ struct HomePage: View {
                                     Spacer()
                                     Text("23/10/21")
                                 }
+                                .font(.notoSansKR(.medium, size: 14))
                             }
                             .padding(.horizontal)
                             .padding(.vertical, 14)
@@ -94,10 +105,12 @@ struct HomePage: View {
                             .cornerRadius(9)
                             
                             VStack(spacing: 0) {
-                                Text("선호 장르")
+                                Text("favoriteGenre")
+                                    .font(.notoSansKR(.bold, size: 14))
                                     .padding(.top, 26)
                                 Spacer()
-                                Text("문학")
+                                Text("literature")
+                                    .font(.notoSansKR(.bold, size: 28))
                                     .padding(.bottom, 31)
                             }
                             .padding(.horizontal, 10)
@@ -108,9 +121,11 @@ struct HomePage: View {
                     
                     VStack(spacing: 24) {
                         HStack(spacing: 0) {
-                            Text("읽고 있는 책")
+                            Text("readingBook")
+                                .font(.notoSansKR(.bold, size: 20))
                             Spacer()
-                            Text("전체 보기")
+                            Text("viewAll")
+                                .font(.notoSansKR(.medium, size: 16))
                         }
                         
                         RoundedRectangle(cornerRadius: 9)
@@ -120,9 +135,11 @@ struct HomePage: View {
                     
                     VStack(spacing: 20) {
                         HStack(spacing: 0) {
-                            Text("다음에 읽을 책")
+                            Text("nextReadBook")
+                                .font(.notoSansKR(.bold, size: 20))
                             Spacer()
-                            Text("전체 보기")
+                            Text("viewAll")
+                                .font(.notoSansKR(.medium, size: 16))
                         }
                         
                         HStack(spacing: 16) {
@@ -133,23 +150,24 @@ struct HomePage: View {
                         }
                     }
                 }
+                .padding(.horizontal, 33)
             }
         }
-        .padding(.horizontal, 33)
         .foregroundColor(.white)
         .background(Color.background)
     }
     
     private var header: some View {
         HStack(spacing: 0) {
-            Text("내 서재")
+            Text("myLibrary")
             Spacer()
             homeTypePicker
         }
+        .padding(.horizontal, 33)
     }
     
     private var homeTypePicker: some View {
-        Picker("", selection: $homeType) {
+        Picker("", selection: $viewModel.homeType) {
             ForEach(HomeType.allCases, id: \.self) { type in
                 Text(type.icon)
             }

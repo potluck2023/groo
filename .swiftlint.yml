@@ -13,6 +13,7 @@ disabled_rules: # 실행에서 제외할 룰 식별자들
   - control_statement
   - leading_whitespace
   - trailing_whitespace
+  - identifier_name
 opt_in_rules: # 일부 룰은 옵트 인 형태로 제공
   - empty_count
   - missing_docs
@@ -45,12 +46,14 @@ type_name:
     warning: 40
     error: 50
   excluded: iPhone # 제외할 문자열 값 사용
-identifier_name:
-  min_length:
-    warning: 3
-    error: 2
-  excluded: # 제외할 문자열 목록 사용
-    - id
-    - URL
-    - GlobalAPIKey
+#identifier_name:
+#  validates_start_with_lowercase: false
+#
+#  min_length:
+#    warning: 3
+#    error: 2
+#  excluded: # 제외할 문자열 목록 사용
+#    - id
+#    - URL
+#    - GlobalAPIKey
 reporter: "xcode" # 보고 유형 (xcode, json, csv, checkstyle, junit, html, emoji, markdown)

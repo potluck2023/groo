@@ -12,6 +12,20 @@ class RegisterViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var passwordConfirm: String = ""
+    
+    private let accountRepository: AccountRepositoryProtocol
+    
+    init(accountRepository: AccountRepositoryProtocol = AccountRepository()) {
+        self.accountRepository = accountRepository
+    }
+    
+    func sendVerificationEmail() async {
+        do {
+            try await accountRepository.postMailCheck(email: email)
+        } catch {
+            Log(error)
+        }
+    }
 }
 
 struct RegisterPage: View {
@@ -50,7 +64,9 @@ struct RegisterPage: View {
                 AccountTextField(text: $viewModel.passwordConfirm, focusField: _focusField, field: .passwordConfirm)
                     .padding(.vertical)
                 Button {
-                    // TODO: send email
+                    Task {
+                        await viewModel.sendVerificationEmail()
+                    }
                 } label: {
                     Text("sendEmail")
                         .fontWeight(.semibold)

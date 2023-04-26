@@ -15,6 +15,7 @@ struct Main: View {
                     Text("Home")
                 }
         }
+        .font(.notoSansKR(.medium))
     }
 }
 

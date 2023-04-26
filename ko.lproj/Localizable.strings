@@ -6,7 +6,7 @@
   
 */
 
-// MARK: Account
+// MARK: - Account
 "or" = "또는";
 
 "login" = "로그인";
@@ -49,3 +49,55 @@
 "emailDuplicatedError" = "이미 사용 중인 이메일 주소입니다. 다른 이메일 주소를 입력해 주세요.";
 
 "emailNotRegisteredError" = "가입된 적 없는 이메일 주소입니다. 이메일 주소를 다시 한번 확인해주세요";
+
+
+// MARK: - Home
+"myLibrary" = "내 서재";
+
+"%lldMonth" = "%lld개월";
+
+"myThought" = "나의 생각";
+
+"favoriteGenre" = "선호 장르";
+
+"booksRead" = "읽은 책";
+
+"readingBook" = "읽고 있는 책";
+
+"viewAll" = "전체 보기";
+
+"nextReadBook" = "다음에 읽을 책";
+
+"readingFinish" = "독서 완료";
+
+"recordThought" = "생각 기록";
+
+"booksHasReadSoFar" = "지금까지 읽은 책";
+
+"%lldBooks" = "%lld권";
+
+"books" = "권";
+
+"all" = "전체";
+
+
+// MARK: - classification table
+"generalWorks" = "총류";
+
+"philosophy" = "철학";
+
+"religion" = "종교";
+
+"socialScience" = "사회과학";
+
+"science" = "자연과학";
+
+"technology" = "기술과학";
+
+"arts" = "예술";
+
+"language" = "언어";
+
+"literature" = "문학";
+
+"history" = "역사";
