@@ -30,6 +30,8 @@ struct LoginPage: View {
             
             AccountTextField(text: $viewModel.password, focusField: _focusField, field: .password)
             
+            TextFieldPrompt(text: "passwordRegexError")
+            
             loginButton
             
             passwordFindLink

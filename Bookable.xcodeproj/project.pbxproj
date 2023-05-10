@@ -20,6 +20,9 @@
 		63691A1229EBE38900EE2A2E /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63691A1129EBE38900EE2A2E /* ButtonStyle.swift */; };
 		63691A1529EBEA7B00EE2A2E /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63691A1429EBEA7B00EE2A2E /* Main.swift */; };
 		63691A1729EBEC2300EE2A2E /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63691A1629EBEC2300EE2A2E /* HomePage.swift */; };
+		63BF1D5D2A0A141F00CE60E8 /* HomeToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF1D5C2A0A141F00CE60E8 /* HomeToggle.swift */; };
+		63D6D70F2A0B160300BC016E /* TextFieldPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D6D70E2A0B160300BC016E /* TextFieldPrompt.swift */; };
+		63D6D7112A0B171100BC016E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D6D7102A0B171100BC016E /* StringExtension.swift */; };
 		63DC910F29D986E90048D0AC /* BookableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC910E29D986E90048D0AC /* BookableApp.swift */; };
 		63DC911129D986E90048D0AC /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC911029D986E90048D0AC /* LoginPage.swift */; };
 		63DC911329D986EA0048D0AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DC911229D986EA0048D0AC /* Assets.xcassets */; };
@@ -90,6 +93,9 @@
 		63691A1129EBE38900EE2A2E /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		63691A1429EBEA7B00EE2A2E /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		63691A1629EBEC2300EE2A2E /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		63BF1D5C2A0A141F00CE60E8 /* HomeToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeToggle.swift; sourceTree = "<group>"; };
+		63D6D70E2A0B160300BC016E /* TextFieldPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPrompt.swift; sourceTree = "<group>"; };
+		63D6D7102A0B171100BC016E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		63DC910B29D986E90048D0AC /* Bookable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DC910E29D986E90048D0AC /* BookableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookableApp.swift; sourceTree = "<group>"; };
 		63DC911029D986E90048D0AC /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 				63FC271729F520AA00D59C11 /* URLExtension.swift */,
 				63FC271929F525DF00D59C11 /* URLRequestExtension.swift */,
 				633A5BDA29D98EAC0073FF9D /* ViewExtension.swift */,
+				63D6D7102A0B171100BC016E /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -184,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				633A5BE329D9954B0073FF9D /* AccountTextField.swift */,
+				63D6D70E2A0B160300BC016E /* TextFieldPrompt.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -214,9 +222,18 @@
 		63691A1329EBEA6400EE2A2E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				63BF1D5B2A0A141100CE60E8 /* Components */,
 				63691A1629EBEC2300EE2A2E /* HomePage.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		63BF1D5B2A0A141100CE60E8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				63BF1D5C2A0A141F00CE60E8 /* HomeToggle.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		63DC910229D986E90048D0AC = {
@@ -512,6 +529,7 @@
 				63FC272B29F5302900D59C11 /* MockAccountRepository.swift in Sources */,
 				633A5BEC29D9A15B0073FF9D /* AccountRepository.swift in Sources */,
 				63691A0F29EBE05700EE2A2E /* EmailVerificationPage.swift in Sources */,
+				63BF1D5D2A0A141F00CE60E8 /* HomeToggle.swift in Sources */,
 				63FC271829F520AA00D59C11 /* URLExtension.swift in Sources */,
 				63EA0B0B29F9527C0041DC13 /* FontExtension.swift in Sources */,
 				63691A1729EBEC2300EE2A2E /* HomePage.swift in Sources */,
@@ -521,7 +539,9 @@
 				633A5BDB29D98EAC0073FF9D /* ViewExtension.swift in Sources */,
 				633A5BE829D99A7C0073FF9D /* PasswordResetPage.swift in Sources */,
 				63FC272129F5287200D59C11 /* Log.swift in Sources */,
+				63D6D70F2A0B160300BC016E /* TextFieldPrompt.swift in Sources */,
 				63691A1229EBE38900EE2A2E /* ButtonStyle.swift in Sources */,
+				63D6D7112A0B171100BC016E /* StringExtension.swift in Sources */,
 				63FC271A29F525DF00D59C11 /* URLRequestExtension.swift in Sources */,
 				63DC910F29D986E90048D0AC /* BookableApp.swift in Sources */,
 				633A5BE129D9943B0073FF9D /* AgreementPage.swift in Sources */,

@@ -49,7 +49,7 @@ struct EmailVerificationPage: View {
     }
     
     private var codeField: some View {
-        HStack(spacing: 13) {
+        HStack(spacing: 8) {
             ForEach(0..<6) { index in
                 codeSection(String(index))
             }
@@ -60,7 +60,7 @@ struct EmailVerificationPage: View {
         ZStack {
             RoundedRectangle(cornerRadius: 4.36)
                 .scaledToFit()
-                .frame(width: 40)
+                .frame(width: 48, height: 60)
                 .foregroundColor(Color(hex: 0x2D2D2D))
             Text(number)
                 .foregroundColor(.white)

@@ -26,17 +26,16 @@ enum AccountFocusField {
         }
     }
     
-    // TODO: icon name
     var icon: String {
         switch self {
         case .name:
-            return ""
+            return "user"
         case .email:
-            return ""
+            return "email"
         case .password:
-            return ""
+            return "password"
         case .passwordConfirm:
-            return ""
+            return "password"
         }
     }
 }
@@ -54,10 +53,7 @@ struct AccountTextField: View {
     
     var body: some View {
         HStack(spacing: 12) {
-            // TODO: icon
-            Circle()
-                .fill(Color(hex: 0xD7D7D7))
-                .frame(width: 16, height: 16)
+            Image(field.icon)
             
             TextField("", text: $text)
                 .placeholder(when: text.isEmpty) {

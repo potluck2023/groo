@@ -25,9 +25,9 @@
 
 "required" = "필수";
 
-"termsOfService" = "서비스 이용약관 >";
+"termsOfService" = "서비스 이용약관";
 
-"privacyPolicy" = "개인정보 수집 및 이용동의 >";
+"privacyPolicy" = "개인정보 수집 및 이용동의";
 
 "next" = "다음";
 
@@ -49,6 +49,8 @@
 "emailDuplicatedError" = "이미 사용 중인 이메일 주소입니다. 다른 이메일 주소를 입력해 주세요.";
 
 "emailNotRegisteredError" = "가입된 적 없는 이메일 주소입니다. 이메일 주소를 다시 한번 확인해주세요";
+
+"passwordRegexError" = "비밀번호 형식이 올바르지 않습니다.";
 
 
 // MARK: - Home

@@ -31,7 +31,7 @@ struct AgreementPage: View {
                     .foregroundColor(Color.white)
                 Spacer()
                 
-                checkBox
+                Image("unchecked")
             }
             .frame(height: 59)
             
@@ -39,11 +39,14 @@ struct AgreementPage: View {
                 Text("required")
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(Color.white)
-                Text("termsOfService")
-                    .font(.system(size: 14))
-                    .foregroundColor(Color(hex: 0xCDCDCD))
+                HStack(spacing: 4) {
+                    Text("termsOfService")
+                    Image("arrow")
+                }
+                .font(.system(size: 14))
+                .foregroundColor(Color(hex: 0xCDCDCD))
                 Spacer()
-                checkBox
+                Image("unchecked")
             }
             .frame(height: 59)
             
@@ -51,11 +54,14 @@ struct AgreementPage: View {
                 Text("required")
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(Color.white)
-                Text("privacyPolicy")
-                    .font(.system(size: 14))
-                    .foregroundColor(Color(hex: 0xCDCDCD))
+                HStack(spacing: 4) {
+                    Text("privacyPolicy")
+                    Image("arrow")
+                }
+                .font(.system(size: 14))
+                .foregroundColor(Color(hex: 0xCDCDCD))
                 Spacer()
-                checkBox
+                Image("checked")
             }
             .frame(height: 59)
             
@@ -72,12 +78,6 @@ struct AgreementPage: View {
         }
         .padding(.horizontal, 44)
         .background(Color.background)
-    }
-    
-    private var checkBox: some View {
-        RoundedRectangle(cornerRadius: 2)
-            .strokeBorder(Color(hex: 0xCDCDCD), lineWidth: 2)
-            .frame(width: 16, height: 16)
     }
 }
 

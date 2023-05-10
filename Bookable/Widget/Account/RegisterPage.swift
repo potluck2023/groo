@@ -49,26 +49,21 @@ struct RegisterPage: View {
             VStack(spacing: 0) {
                 AccountTextField(text: $viewModel.name, focusField: _focusField, field: .name)
                     .padding(.bottom)
-                Text("nameDuplicatedError")
-                    .fixedSize(horizontal: false, vertical: true)
-                    .font(.system(size: 14))
-                    .foregroundColor(Color(hex: 0xD3D3D3))
+                TextFieldPrompt(text: "nameDuplicatedError")
                 AccountTextField(text: $viewModel.email, focusField: _focusField, field: .email)
                     .padding(.vertical)
-                Text("emailDuplicatedError")
-                    .fixedSize(horizontal: false, vertical: true)
-                    .font(.system(size: 14))
-                    .foregroundColor(Color(hex: 0xD3D3D3))
+                TextFieldPrompt(text: "emailDuplicatedError")
                 AccountTextField(text: $viewModel.password, focusField: _focusField, field: .password)
                     .padding(.vertical)
                 AccountTextField(text: $viewModel.passwordConfirm, focusField: _focusField, field: .passwordConfirm)
                     .padding(.vertical)
                 Button {
+                    // TODO: validation check
                     Task {
                         await viewModel.sendVerificationEmail()
                     }
                 } label: {
-                    Text("sendEmail")
+                    Text("next")
                         .fontWeight(.semibold)
                 }
                 .buttonStyle(RoundedButtonStyle())

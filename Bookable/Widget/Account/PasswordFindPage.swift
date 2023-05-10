@@ -28,14 +28,9 @@ struct PasswordFindPage: View {
                 .foregroundColor(Color(hex: 0xB8B8B8))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.bottom, 55)
-            VStack(spacing: 0) {
+            VStack(spacing: 16) {
                 AccountTextField(text: $viewModel.email, focusField: _focusField, field: .email)
-                    .padding(.bottom)
-                Text("emailNotRegisteredError")
-                    .fixedSize(horizontal: false, vertical: true)
-                    .font(.system(size: 14))
-                    .foregroundColor(Color(hex: 0xD3D3D3))
-                    .padding(.bottom)
+                TextFieldPrompt(text: "emailNotRegisteredError")
                 Button {
                     // TODO: send email
                 } label: {

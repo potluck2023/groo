@@ -46,16 +46,19 @@ struct HomePage: View {
     private var content: some View {
         VStack(spacing: 32) {
             header
-                .font(.notoSansKR(.bold, size: 24))
+                .padding(.top, 32)
             
             ScrollView {
                 VStack(spacing: 40) {
                     VStack( spacing: 20) {
                         HStack(spacing: 13) {
-                            VStack(spacing: 0) {
-                                Text("month")
-                                Text("\(1)Month")
-                                    .font(.notoSansKR(.bold, size: 14))
+                            VStack(spacing: 8) {
+                                Image("calendar")
+                                HStack(spacing: 4) {
+                                    Text("\(1)Month")
+                                        .font(.notoSansKR(.bold, size: 14))
+                                    Image("arrow")
+                                }
                             }
                             .foregroundColor(.black)
                             .frame(width: 72, height: 72)
@@ -74,11 +77,17 @@ struct HomePage: View {
                             .padding(.trailing, 12)
                             .padding(.leading, 30)
                             .background(Color(hex: 0x434343))
-                            .cornerRadius(9, corners: [.topLeft, .bottomLeft])
+                            .cornerRadius(4, corners: [.topLeft, .bottomLeft])
                             .padding(.vertical, 12)
                             .padding(.leading, 13)
                             .background(Color(hex: 0x272727))
                             .cornerRadius(9)
+                            .overlay(
+                                Image("bookmark")
+                                    .padding(.top, 12)
+                                    .padding(.leading, 20),
+                                alignment: .topLeading
+                            )
                         }
                         
                         HStack(spacing: 14) {
@@ -86,7 +95,7 @@ struct HomePage: View {
                                 HStack(spacing: 0) {
                                     Text("myThought")
                                     Spacer()
-                                    Text(">")
+                                    Image("arrow")
                                 }
                                 Text("개인적으로 이 만화를 보면서 책을 사랑하는 마음이 커졌다. 여우와 인간의 이야기를 통해 책이 가지는 매력과 그 중요성을 깨")
                                     .font(.notoSansKR(.medium, size: 14))
@@ -161,19 +170,21 @@ struct HomePage: View {
         HStack(spacing: 0) {
             Text("myLibrary")
             Spacer()
-            homeTypePicker
+//            homeTypePicker
+            HomeToggle(selection: $viewModel.homeType)
         }
+        .font(.notoSansKR(.bold, size: 24))
         .padding(.horizontal, 33)
     }
     
-    private var homeTypePicker: some View {
-        Picker("", selection: $viewModel.homeType) {
-            ForEach(HomeType.allCases, id: \.self) { type in
-                Text(type.icon)
-            }
-        }
-        .pickerStyle(.segmented)
-    }
+//    private var homeTypePicker: some View {
+//        Picker("", selection: $viewModel.homeType) {
+//            ForEach(HomeType.allCases, id: \.self) { type in
+//                Text(type.icon)
+//            }
+//        }
+//        .pickerStyle(.segmented)
+//    }
 }
 
 struct HomePage_Previews: PreviewProvider {
