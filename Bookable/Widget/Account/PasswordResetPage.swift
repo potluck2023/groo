@@ -29,10 +29,17 @@ struct PasswordResetPage: View {
                 .foregroundColor(Color(hex: 0xB8B8B8))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.bottom, 55)
-            VStack(spacing: 16) {
-                AccountTextField(text: $viewModel.password, focusField: _focusField, field: .password)
-                TextFieldPrompt(text: "passwordRegexError")
-                AccountTextField(text: $viewModel.passwordConfirm, focusField: _focusField, field: .passwordConfirm)
+            VStack(spacing: 19) {
+                VStack(spacing: 12) {
+                    AccountTextField(text: $viewModel.password, focusField: _focusField, field: .password)
+                    TextFieldPrompt(text: "passwordRegexError")
+                }
+                
+                VStack(spacing: 12) {
+                    AccountTextField(text: $viewModel.passwordConfirm, focusField: _focusField, field: .passwordConfirm)
+                    TextFieldPrompt(text: "passwordRegexError")
+                }
+                
                 Button {
                     // TODO: save
                 } label: {

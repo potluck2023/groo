@@ -8,12 +8,21 @@
 import SwiftUI
 
 struct Main: View {
+    @State private var selection: MainTabBar = .home
+    
     var body: some View {
-        TabView {
-            HomePage()
-                .tabItem {
-                    Text("Home")
-                }
+        VStack(spacing: 0) {
+            switch selection {
+            case .home:
+                HomePage()
+            case .search:
+                Text("search")
+            case .note:
+                Text("note")
+            case .user:
+                Text("user")
+            }
+            CustomTabBar(selection: $selection)
         }
         .font(.notoSansKR(.medium))
     }

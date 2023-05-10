@@ -11,8 +11,7 @@ import SwiftUI
 struct BookableApp: App {
     var body: some Scene {
         WindowGroup {
-//            Main()
-            RegisterPage()
+            Main()
         }
     }
 }

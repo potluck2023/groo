@@ -23,6 +23,7 @@
 		63BF1D5D2A0A141F00CE60E8 /* HomeToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF1D5C2A0A141F00CE60E8 /* HomeToggle.swift */; };
 		63D6D70F2A0B160300BC016E /* TextFieldPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D6D70E2A0B160300BC016E /* TextFieldPrompt.swift */; };
 		63D6D7112A0B171100BC016E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D6D7102A0B171100BC016E /* StringExtension.swift */; };
+		63D6D7152A0B3F8700BC016E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D6D7142A0B3F8700BC016E /* CustomTabBar.swift */; };
 		63DC910F29D986E90048D0AC /* BookableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC910E29D986E90048D0AC /* BookableApp.swift */; };
 		63DC911129D986E90048D0AC /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC911029D986E90048D0AC /* LoginPage.swift */; };
 		63DC911329D986EA0048D0AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DC911229D986EA0048D0AC /* Assets.xcassets */; };
@@ -96,6 +97,7 @@
 		63BF1D5C2A0A141F00CE60E8 /* HomeToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeToggle.swift; sourceTree = "<group>"; };
 		63D6D70E2A0B160300BC016E /* TextFieldPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPrompt.swift; sourceTree = "<group>"; };
 		63D6D7102A0B171100BC016E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		63D6D7142A0B3F8700BC016E /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		63DC910B29D986E90048D0AC /* Bookable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DC910E29D986E90048D0AC /* BookableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookableApp.swift; sourceTree = "<group>"; };
 		63DC911029D986E90048D0AC /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		633A5BDC29D9917C0073FF9D /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				63D6D7122A0B3F7A00BC016E /* Components */,
 				63691A1429EBEA7B00EE2A2E /* Main.swift */,
 				63691A1329EBEA6400EE2A2E /* Home */,
 				633A5BDD29D991860073FF9D /* Account */,
@@ -232,6 +235,14 @@
 			isa = PBXGroup;
 			children = (
 				63BF1D5C2A0A141F00CE60E8 /* HomeToggle.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		63D6D7122A0B3F7A00BC016E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				63D6D7142A0B3F8700BC016E /* CustomTabBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -542,6 +553,7 @@
 				63D6D70F2A0B160300BC016E /* TextFieldPrompt.swift in Sources */,
 				63691A1229EBE38900EE2A2E /* ButtonStyle.swift in Sources */,
 				63D6D7112A0B171100BC016E /* StringExtension.swift in Sources */,
+				63D6D7152A0B3F8700BC016E /* CustomTabBar.swift in Sources */,
 				63FC271A29F525DF00D59C11 /* URLRequestExtension.swift in Sources */,
 				63DC910F29D986E90048D0AC /* BookableApp.swift in Sources */,
 				633A5BE129D9943B0073FF9D /* AgreementPage.swift in Sources */,

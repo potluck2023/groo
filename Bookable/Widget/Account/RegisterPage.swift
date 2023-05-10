@@ -46,17 +46,23 @@ struct RegisterPage: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.bottom, 55)
             
-            VStack(spacing: 0) {
+            VStack(spacing: 19) {
                 AccountTextField(text: $viewModel.name, focusField: _focusField, field: .name)
-                    .padding(.bottom)
-                TextFieldPrompt(text: "nameDuplicatedError")
-                AccountTextField(text: $viewModel.email, focusField: _focusField, field: .email)
-                    .padding(.vertical)
-                TextFieldPrompt(text: "emailDuplicatedError")
-                AccountTextField(text: $viewModel.password, focusField: _focusField, field: .password)
-                    .padding(.vertical)
-                AccountTextField(text: $viewModel.passwordConfirm, focusField: _focusField, field: .passwordConfirm)
-                    .padding(.vertical)
+                VStack(spacing: 12) {
+                    AccountTextField(text: $viewModel.email, focusField: _focusField, field: .email)
+                    TextFieldPrompt(text: "emailDuplicatedError")
+                }
+                
+                VStack(spacing: 12) {
+                    AccountTextField(text: $viewModel.password, focusField: _focusField, field: .password)
+                    TextFieldPrompt(text: "passwordRegexError")
+                }
+                
+                VStack(spacing: 12) {
+                    AccountTextField(text: $viewModel.passwordConfirm, focusField: _focusField, field: .passwordConfirm)
+                    TextFieldPrompt(text: "passwordRegexError")
+                }
+                
                 Button {
                     // TODO: validation check
                     Task {

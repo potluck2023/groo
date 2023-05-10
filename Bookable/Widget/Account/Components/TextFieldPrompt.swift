@@ -24,6 +24,7 @@ struct TextFieldPrompt: View {
 struct TextFieldPrompt_Previews: PreviewProvider {
     static var previews: some View {
         TextFieldPrompt(text: "이미 사용 중인 닉네임입니다. 다른 닉네임을 입력해 주세요.")
+            .frame(maxWidth: 300)
             .previewLayout(.sizeThatFits)
     }
 }

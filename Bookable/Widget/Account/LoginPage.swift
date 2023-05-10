@@ -18,7 +18,7 @@ struct LoginPage: View {
     @FocusState private var focusField: AccountFocusField?
     
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 19) {
             Text("logo")
                 .bold()
                 .font(.system(size: 28))
@@ -28,9 +28,10 @@ struct LoginPage: View {
             
             AccountTextField(text: $viewModel.email, focusField: _focusField, field: .email)
             
-            AccountTextField(text: $viewModel.password, focusField: _focusField, field: .password)
-            
-            TextFieldPrompt(text: "passwordRegexError")
+            VStack(spacing: 12) {
+                AccountTextField(text: $viewModel.password, focusField: _focusField, field: .password)
+                TextFieldPrompt(text: "passwordRegexError")
+            }
             
             loginButton
             
