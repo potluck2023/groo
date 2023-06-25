@@ -34,4 +34,15 @@ final class RegisterViewModelTests: XCTestCase {
         // then
         
     }
+    
+    func test이메일_인증_성공() async throws {
+        expectation = XCTestExpectation(description: "이메일 인증 성공")
+        
+        // given
+        let code = "123456"
+        
+        // when
+        
+        // then
+    }
 }

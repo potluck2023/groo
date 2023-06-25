@@ -72,7 +72,7 @@
 
 "readingFinish" = "독서 완료";
 
-"recordThought" = "생각 기록";
+"recordingThought" = "생각 기록";
 
 "booksHasReadSoFar" = "지금까지 읽은 책";
 
@@ -82,6 +82,15 @@
 
 "all" = "전체";
 
+
+// MARK: - CardView
+"organizeYourThoughts" = "책을 읽으면서 드는 생각을 정리해보세요.";
+
+"recordThought" = "생각 기록하기";
+
+"recordReadingBooks" = "읽고 있는 책을 기록해보세요";
+
+"recordBook" = "책 기록하기";
 
 // MARK: - classification table
 "generalWorks" = "총류";

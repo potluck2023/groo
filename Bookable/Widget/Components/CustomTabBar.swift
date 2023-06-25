@@ -30,6 +30,8 @@ enum MainTabBar: CaseIterable {
 struct CustomTabBar: View {
     @Binding private var selection: MainTabBar
     
+    @State private var needLogin: Bool = false
+    
     init(selection: Binding<MainTabBar>) {
         self._selection = selection
     }
@@ -37,7 +39,11 @@ struct CustomTabBar: View {
     var body: some View {
         HStack(spacing: 0) {
             ForEach(MainTabBar.allCases, id: \.self) { tab in
-                button(tab)
+                if tab == .user {
+                    loginButton(tab)
+                } else {
+                    button(tab)
+                }
             }
         }
         .frame(maxWidth: .infinity)
@@ -48,12 +54,22 @@ struct CustomTabBar: View {
         Button {
             selection = tab
         } label: {
-            Image(tab.icon)
-                .foregroundColor(selection == tab ? Color(hex: 0xEFEFEF) : Color(hex: 0xA2A2A2))
-                .padding(.top, 24)
-                .padding([.horizontal, .bottom], 28)
-                .contentShape(Rectangle())
+            buttonLabel(tab)
         }
+    }
+    
+    private func loginButton(_ tab: MainTabBar) -> some View {
+        NavigationLink(destination: LoginPage()) {
+            buttonLabel(tab)
+        }
+    }
+    
+    private func buttonLabel(_ tab: MainTabBar) -> some View {
+        Image(tab.icon)
+            .foregroundColor(selection == tab ? Color(hex: 0xEFEFEF) : Color(hex: 0xA2A2A2))
+            .padding(.top, 24)
+            .padding([.horizontal, .bottom], 28)
+            .contentShape(Rectangle())
     }
 }
 

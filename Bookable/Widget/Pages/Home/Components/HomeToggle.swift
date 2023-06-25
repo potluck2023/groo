@@ -22,21 +22,21 @@ struct HomeToggle: View {
     var body: some View {
         HStack(spacing: 0) {
             Button {
-                selection = .main
+                selection = .card
             } label: {
-                Image("cards")
-                    .foregroundColor(iconColor(.main))
+                Image(HomeType.card.icon)
+                    .foregroundColor(iconColor(.card))
                     .padding(EdgeInsets(top: 12, leading: 27, bottom: 13, trailing: 20))
-                    .background(backgroundColor(.main))
+                    .background(backgroundColor(.card))
                     .cornerRadius(30, corners: [.topLeft, .bottomLeft])
             }
             Button {
-                selection = .list
+                selection = .book
             } label: {
-                Image("books")
-                    .foregroundColor(iconColor(.list))
+                Image(HomeType.book.icon)
+                    .foregroundColor(iconColor(.book))
                     .padding(EdgeInsets(top: 11, leading: 24, bottom: 11, trailing: 23.5))
-                    .background(backgroundColor(.list))
+                    .background(backgroundColor(.book))
                     .cornerRadius(30, corners: [.topRight, .bottomRight])
             }
         }
@@ -51,13 +51,13 @@ struct HomeToggle: View {
     }
     
     private var isMain: Bool {
-        selection == .main
+        selection == .card
     }
 }
 
 struct HomeToggle_Previews: PreviewProvider {
     static var previews: some View {
-        HomeToggle(selection: .constant(.main))
+        HomeToggle(selection: .constant(.card))
             .padding()
             .background(Color.background)
             .previewLayout(.sizeThatFits)

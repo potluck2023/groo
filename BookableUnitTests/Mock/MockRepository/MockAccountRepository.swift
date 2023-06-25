@@ -19,4 +19,22 @@ final class MockAccountRepository: AccountRepositoryProtocol {
             throw AuthenticationError.custom(mockErrorMessage)
         }
     }
+    
+    func postLogin(email: String, password: String) async throws {
+        if let mockErrorMessage {
+            throw AuthenticationError.custom(mockErrorMessage)
+        }
+    }
+    
+    func postRegister(email: String, password: String, name: String) async throws {
+        if let mockErrorMessage {
+            throw AuthenticationError.custom(mockErrorMessage)
+        }
+    }
+    
+    func postModifyPass(email: String, password: String) async throws {
+        if let mockErrorMessage {
+            throw AuthenticationError.custom(mockErrorMessage)
+        }
+    }
 }

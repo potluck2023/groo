@@ -47,4 +47,20 @@ extension Endpoint {
     static func mailCheck(email: String) -> Self {
         Endpoint(path: "/mailCheck/\(email)")
     }
+    
+    static var login: Self {
+        Endpoint(path: "/login")
+    }
+    
+    static var memberInfo: Self {
+        Endpoint(path: "/memberInfo")
+    }
+    
+    static var modifyPass: Self {
+        Endpoint(path: "/modifyPass")
+    }
+    
+    static var register: Self {
+        Endpoint(path: "/register")
+    }
 }
