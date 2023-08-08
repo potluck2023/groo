@@ -56,6 +56,11 @@
 		63AE5FB02A660F3E003DAC75 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63AE5F7F2A660F3E003DAC75 /* NotoSansKR-Medium.otf */; };
 		63AE5FB12A660F3E003DAC75 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63AE5F802A660F3E003DAC75 /* NotoSansKR-Regular.otf */; };
 		63AE5FB22A660F3E003DAC75 /* GROOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE5F812A660F3E003DAC75 /* GROOApp.swift */; };
+		63AE5FB62A661BE0003DAC75 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 63AE5FB52A661BE0003DAC75 /* Realm */; };
+		63AE5FB82A661BE0003DAC75 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 63AE5FB72A661BE0003DAC75 /* RealmSwift */; };
+		63AE5FBA2A661E49003DAC75 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE5FB92A661E49003DAC75 /* Book.swift */; };
+		63AE5FBC2A661F59003DAC75 /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE5FBB2A661F59003DAC75 /* SearchData.swift */; };
+		63AE5FBE2A661F96003DAC75 /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE5FBD2A661F96003DAC75 /* SearchRepository.swift */; };
 		63DC912029D986EA0048D0AC /* BookableUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC911F29D986EA0048D0AC /* BookableUnitTests.swift */; };
 		63DC912A29D986EA0048D0AC /* BookableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC912929D986EA0048D0AC /* BookableUITests.swift */; };
 		63DC912C29D986EA0048D0AC /* BookableUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DC912B29D986EA0048D0AC /* BookableUITestsLaunchTests.swift */; };
@@ -133,6 +138,9 @@
 		63AE5F802A660F3E003DAC75 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		63AE5F812A660F3E003DAC75 /* GROOApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GROOApp.swift; sourceTree = "<group>"; };
 		63AE5F822A660F3E003DAC75 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63AE5FB92A661E49003DAC75 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		63AE5FBB2A661F59003DAC75 /* SearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
+		63AE5FBD2A661F96003DAC75 /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
 		63DC910B29D986E90048D0AC /* GROO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GROO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DC911B29D986EA0048D0AC /* GROOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GROOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DC911F29D986EA0048D0AC /* BookableUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookableUnitTests.swift; sourceTree = "<group>"; };
@@ -149,6 +157,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63AE5FB82A661BE0003DAC75 /* RealmSwift in Frameworks */,
+				63AE5FB62A661BE0003DAC75 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,16 +182,16 @@
 		63AE5F3C2A660F3E003DAC75 /* GROO */ = {
 			isa = PBXGroup;
 			children = (
+				63AE5F822A660F3E003DAC75 /* Info.plist */,
+				63AE5F7A2A660F3E003DAC75 /* Font */,
+				63AE5F782A660F3E003DAC75 /* Model */,
+				63AE5F702A660F3E003DAC75 /* Extensions */,
 				63AE5F3D2A660F3E003DAC75 /* Repository */,
 				63AE5F3F2A660F3E003DAC75 /* Widget */,
 				63AE5F692A660F3E003DAC75 /* Util */,
+				63AE5F812A660F3E003DAC75 /* GROOApp.swift */,
 				63AE5F6D2A660F3E003DAC75 /* Assets.xcassets */,
 				63AE5F6E2A660F3E003DAC75 /* Preview Content */,
-				63AE5F702A660F3E003DAC75 /* Extensions */,
-				63AE5F782A660F3E003DAC75 /* Model */,
-				63AE5F7A2A660F3E003DAC75 /* Font */,
-				63AE5F812A660F3E003DAC75 /* GROOApp.swift */,
-				63AE5F822A660F3E003DAC75 /* Info.plist */,
 			);
 			path = GROO;
 			sourceTree = "<group>";
@@ -190,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				63AE5F3E2A660F3E003DAC75 /* AccountRepository.swift */,
+				63AE5FBD2A661F96003DAC75 /* SearchRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -197,10 +208,10 @@
 		63AE5F3F2A660F3E003DAC75 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
-				63AE5F402A660F3E003DAC75 /* Style */,
-				63AE5F422A660F3E003DAC75 /* Components */,
-				63AE5F492A660F3E003DAC75 /* Main.swift */,
 				63AE5F4A2A660F3E003DAC75 /* Pages */,
+				63AE5F422A660F3E003DAC75 /* Components */,
+				63AE5F402A660F3E003DAC75 /* Style */,
+				63AE5F492A660F3E003DAC75 /* Main.swift */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -313,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				63AE5F5E2A660F3E003DAC75 /* SearchPage.swift */,
+				63AE5FBB2A661F59003DAC75 /* SearchData.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -375,6 +387,7 @@
 		63AE5F782A660F3E003DAC75 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				63AE5FB92A661E49003DAC75 /* Book.swift */,
 				63AE5F792A660F3E003DAC75 /* User.swift */,
 			);
 			path = Model;
@@ -475,6 +488,10 @@
 			dependencies = (
 			);
 			name = GROO;
+			packageProductDependencies = (
+				63AE5FB52A661BE0003DAC75 /* Realm */,
+				63AE5FB72A661BE0003DAC75 /* RealmSwift */,
+			);
 			productName = bookable;
 			productReference = 63DC910B29D986E90048D0AC /* GROO.app */;
 			productType = "com.apple.product-type.application";
@@ -548,6 +565,9 @@
 				ko,
 			);
 			mainGroup = 63DC910229D986E90048D0AC;
+			packageReferences = (
+				63AE5FB42A661BE0003DAC75 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 63DC910C29D986E90048D0AC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -620,6 +640,8 @@
 			files = (
 				63AE5F902A660F3E003DAC75 /* FavoriteGenre.swift in Sources */,
 				63AE5F9A2A660F3E003DAC75 /* PasswordFindPage.swift in Sources */,
+				63AE5FBA2A661E49003DAC75 /* Book.swift in Sources */,
+				63AE5FBC2A661F59003DAC75 /* SearchData.swift in Sources */,
 				63AE5F9F2A660F3E003DAC75 /* Log.swift in Sources */,
 				63AE5F932A660F3E003DAC75 /* HomePage.swift in Sources */,
 				63AE5F9E2A660F3E003DAC75 /* LoginPage.swift in Sources */,
@@ -651,6 +673,7 @@
 				63AE5FA72A660F3E003DAC75 /* URLRequest+Extension.swift in Sources */,
 				63AE5F9D2A660F3E003DAC75 /* AgreementPage.swift in Sources */,
 				63AE5F982A660F3E003DAC75 /* PasswordResetPage.swift in Sources */,
+				63AE5FBE2A661F96003DAC75 /* SearchRepository.swift in Sources */,
 				63AE5F972A660F3E003DAC75 /* RegisterPage.swift in Sources */,
 				63AE5FA52A660F3E003DAC75 /* URL+Extension.swift in Sources */,
 				63AE5F9B2A660F3E003DAC75 /* TextFieldPrompt.swift in Sources */,
@@ -1001,6 +1024,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63AE5FB42A661BE0003DAC75 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63AE5FB52A661BE0003DAC75 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63AE5FB42A661BE0003DAC75 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		63AE5FB72A661BE0003DAC75 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63AE5FB42A661BE0003DAC75 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63DC910329D986E90048D0AC /* Project object */;
 }

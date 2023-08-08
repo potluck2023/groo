@@ -9,6 +9,7 @@ import Foundation
 
 enum HttpMethod<Body> {
     case get
+    case getNaver
     case post(Body?)
     case postForm(Body?)
     case put(Body)
@@ -25,6 +26,10 @@ extension URLRequest {
         switch method {
         case .get:
             self.httpMethod = "GET"
+        case .getNaver:
+            self.httpMethod = "GET"
+            self.addValue("X-Naver-Client-Id", forHTTPHeaderField: "hTtuI5V7tXcLQFKzVbpb")
+            self.addValue("X-Naver-Client-Secret", forHTTPHeaderField: "6Ns6aTsWC0")
         case .post(let body):
             self.httpMethod = "POST"
             self.addValue("application/json", forHTTPHeaderField: "content-type")
