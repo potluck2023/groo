@@ -11,6 +11,7 @@ struct SearchField: View {
     @Binding var text: String
     @FocusState var focusField: Bool
     var placeholder: String
+    let onAction: () -> Void
     
     var body: some View {
         HStack(spacing: 0) {
@@ -23,9 +24,14 @@ struct SearchField: View {
             }
             .padding(.vertical, 8)
             .padding(.leading)
-            Image("search")
-                .padding(9.5)
-                .foregroundColor(Color(hex: 0xEFEFEF))
+            
+            Button {
+                onAction()
+            } label: {
+                Image("search")
+                    .padding(9.5)
+                    .foregroundColor(Color(hex: 0xEFEFEF))
+            }
         }
         .modifier(ColorBorder(Color(hex: 0x696969), cornerRadius: 40))
     }

@@ -11,18 +11,6 @@ struct Main: View {
     @State private var selection: MainTabBar = .home
     
     var body: some View {
-        if #available(iOS 16.0, *) {
-            NavigationStack {
-                content
-            }
-        } else {
-            NavigationView {
-                content
-            }
-        }
-    }
-    
-    private var content: some View {
         VStack(spacing: 0) {
             switch selection {
             case .home:

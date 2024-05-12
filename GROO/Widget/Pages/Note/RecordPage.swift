@@ -13,10 +13,13 @@ struct RecordPage: View {
     @FocusState var focusField: Bool
     
     var body: some View {
-        VStack(spacing: 0) {
-            header
-            filters
-            result
+        NavigationStack {
+            VStack(spacing: 0) {
+                header
+                filters
+                result
+            }
+            .background(Color.background)
         }
     }
     
@@ -37,7 +40,9 @@ struct RecordPage: View {
         HStack(spacing: 12) {
             datePicker
             dropdown
-            SearchField(text: $text, focusField: _focusField, placeholder: "")
+            SearchField(text: $text, focusField: _focusField, placeholder: "") {
+                /// onAction
+            }
         }
         .padding(.vertical)
         .padding(.horizontal, 24)

@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct UserPage: View {
+    @State private var scrollDisabled: Bool = true
+    
+    @State private var wholeHeight: CGFloat = 0
+    
     var body: some View {
-        VStack(spacing: 24) {
-            header
-            profile
-            settingMenu
-            privateMenu
-            Spacer()
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 24) {
+//                    header
+                    profile
+                    settingMenu
+                    settingMenu
+                    privateMenu
+                }
+                .readSize(preference: SizePreferenceKey.self) { contentSize in
+                    scrollDisabled = wholeHeight > contentSize.height
+                }
+            }
+            .navigationTitle("myAccount")
+            .background(Color.background)
+            .scrollDisabled(scrollDisabled)
+        }
+        .readSize(preference: SizePreferenceKey.self) { wholeSize in
+            wholeHeight = wholeSize.height
         }
     }
     

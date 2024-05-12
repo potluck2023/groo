@@ -20,6 +20,22 @@ extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
     }
+    
+    /// view size
+    func readSize<K>(preference: K.Type, completionHandler: @escaping (CGSize) -> Void) -> some View where K : PreferenceKey {
+        self
+            .background(
+                GeometryReader { proxy in
+                    if let value = proxy.size as? K.Value {
+                        Color.clear
+                            .preference(key: K.self, value: value)
+                    }
+                }
+            )
+            .onPreferenceChange(SizePreferenceKey.self) { newSize in
+                _ = completionHandler(newSize)
+            }
+    }
 }
 
 struct RoundedCorner: Shape {

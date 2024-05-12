@@ -23,4 +23,26 @@ class APIService: APIServiceProtocol {
             }
         }
     }
+    
+    func decode<T: Codable>(_ resultType: T.Type, from data: Data) throws -> T? {
+        do {
+            let decodedData = try JSONDecoder().decode(resultType.self, from: data)
+            return decodedData
+        } catch let DecodingError.dataCorrupted(context) {
+            print(context)
+        } catch let DecodingError.keyNotFound(key, context) {
+            print("[\(resultType)]Key '\(key)' not found:", context.debugDescription)
+            print("[\(resultType)]codingPath:", context.codingPath)
+        } catch let DecodingError.valueNotFound(value, context) {
+            print("[\(resultType)]Value '\(value)' not found:", context.debugDescription)
+            print("[\(resultType)]codingPath:", context.codingPath)
+        } catch let DecodingError.typeMismatch(type, context) {
+            print("[\(resultType)]Type '\(type)' mismatch:", context.debugDescription)
+            print("[\(resultType)]codingPath:", context.codingPath)
+        } catch {
+            print("[\(resultType)]error: ", error)
+        }
+        
+        return nil
+    }
 }

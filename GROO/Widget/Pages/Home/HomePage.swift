@@ -29,16 +29,8 @@ struct HomePage: View {
     @StateObject private var viewModel = HomeViewModel()
     
     var body: some View {
-        Group {
-            if #available(iOS 16.0, *) {
-                NavigationStack {
-                    content
-                }
-            } else {
-                NavigationView {
-                    content
-                }
-            }
+        NavigationStack {
+            content
         }
         .font(.notoSansKR(.bold))
     }
@@ -57,6 +49,7 @@ struct HomePage: View {
                     .padding(.top, 24)
             }
         }
+        .background(Color.background)
     }
     
     private var header: some View {

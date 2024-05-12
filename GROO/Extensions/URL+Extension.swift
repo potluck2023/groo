@@ -41,21 +41,37 @@ extension Endpoint {
         return url
     }
     
-    var naver: URL {
-        let NAVER_API = "openapi.naver.com"
+    var library: URL {
+        let Library_API = "data4library.kr"
         
         var components = URLComponents()
-        components.scheme = "https"
-        components.host = NAVER_API
-        components.path = "/" + path
+        components.scheme = "http"
+        components.host = Library_API
+        components.path = path
         components.queryItems = queryItems
-
+        
         guard let url = components.url else {
             preconditionFailure("Invalid URL components: \(components)")
         }
         
         return url
     }
+    
+//    var naver: URL {
+//        let NAVER_API = "openapi.naver.com"
+//
+//        var components = URLComponents()
+//        components.scheme = "https"
+//        components.host = NAVER_API
+//        components.path = "/" + path
+//        components.queryItems = queryItems
+//
+//        guard let url = components.url else {
+//            preconditionFailure("Invalid URL components: \(components)")
+//        }
+//
+//        return url
+//    }
 }
 
 extension Endpoint {
@@ -81,7 +97,7 @@ extension Endpoint {
     }
     
     // MARK: - search
-    static func search(query: [URLQueryItem]) -> Self {
-        Endpoint(path: "/v1/search/book.json", queryItems: query)
+    static func searchBook(query: [URLQueryItem]) -> Self {
+        Endpoint(path: "/api/srchBooks", queryItems: query)
     }
 }

@@ -7,29 +7,24 @@
 
 import Foundation
 
-enum HttpMethod<Body> {
+enum HttpMethod {
     case get
-    case getNaver
-    case post(Body?)
-    case postForm(Body?)
-    case put(Body)
-    case delete(Body?)
-    case patch(Body)
-    case patchForm(Body?)
+    case post(_ body: Codable)
+    case postForm(_ body: Codable)
+    case put(_ body: Codable)
+    case delete(_ body: Codable)
+    case patch(_ body: Codable)
+    case patchForm(_ body: Codable)
 }
 
 extension URLRequest {
-    init<Body: Codable> (url: URL, method: HttpMethod<Body>) {
+    init(url: URL, method: HttpMethod) {
         self.init(url: url)
         self.timeoutInterval = TimeInterval(10)
         
         switch method {
         case .get:
             self.httpMethod = "GET"
-        case .getNaver:
-            self.httpMethod = "GET"
-            self.addValue("X-Naver-Client-Id", forHTTPHeaderField: "hTtuI5V7tXcLQFKzVbpb")
-            self.addValue("X-Naver-Client-Secret", forHTTPHeaderField: "6Ns6aTsWC0")
         case .post(let body):
             self.httpMethod = "POST"
             self.addValue("application/json", forHTTPHeaderField: "content-type")
