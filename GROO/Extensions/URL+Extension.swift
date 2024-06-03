@@ -47,7 +47,7 @@ extension Endpoint {
         var components = URLComponents()
         components.scheme = "https"
         components.host = NAVER_API
-        components.path = "/" + path
+        components.path = path
         components.queryItems = queryItems
 
         guard let url = components.url else {

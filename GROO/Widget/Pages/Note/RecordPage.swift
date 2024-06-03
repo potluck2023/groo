@@ -8,15 +8,26 @@
 import SwiftUI
 
 struct RecordPage: View {
-    @State var text: String = ""
+    @StateObject private var pathModel: PathModel
+    @State private var text: String
     
-    @FocusState var focusField: Bool
+    @FocusState private var focusField: Bool
+    
+    init(
+        pathModel: PathModel = .init(),
+        text: String = ""
+    ) {
+        _pathModel = .init(wrappedValue: pathModel)
+        _text = .init(initialValue: text)
+    }
     
     var body: some View {
-        VStack(spacing: 0) {
-            header
-            filters
-            result
+        NavigationStack(path: $pathModel.paths) {
+            VStack(spacing: 0) {
+                header
+                filters
+                result
+            }
         }
     }
     
@@ -37,7 +48,9 @@ struct RecordPage: View {
         HStack(spacing: 12) {
             datePicker
             dropdown
-            SearchField(text: $text, focusField: _focusField, placeholder: "")
+            SearchField($text, _focusField, placeholder: "") {
+                
+            }
         }
         .padding(.vertical)
         .padding(.horizontal, 24)
@@ -137,10 +150,8 @@ struct RecordPage: View {
     }
 }
 
-struct RecordPage_Previews: PreviewProvider {
-    static var previews: some View {
-        RecordPage()
-            .foregroundColor(Color(hex: 0xEFEFEF))
-            .background(Color.background)
-    }
+#Preview {
+    RecordPage()
+        .foregroundColor(Color(hex: 0xEFEFEF))
+        .background(Color.background)
 }

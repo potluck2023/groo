@@ -19,17 +19,29 @@ enum HttpMethod<Body> {
 }
 
 extension URLRequest {
+    init(url: URL, method: HttpMethod<Void>) {
+        self.init(url: url)
+        self.timeoutInterval = TimeInterval(10)
+        
+        switch method {
+        case .get, .getNaver:
+            self.httpMethod = "GET"
+            self.addValue("application/json", forHTTPHeaderField: "content-type")
+            
+            if case .getNaver = method {
+                self.addValue("X-Naver-Client-Id", forHTTPHeaderField: "hTtuI5V7tXcLQFKzVbpb")
+                self.addValue("X-Naver-Client-Secret", forHTTPHeaderField: "6Ns6aTsWC0")
+            }
+        default:
+            break
+        }
+    }
+    
     init<Body: Codable> (url: URL, method: HttpMethod<Body>) {
         self.init(url: url)
         self.timeoutInterval = TimeInterval(10)
         
         switch method {
-        case .get:
-            self.httpMethod = "GET"
-        case .getNaver:
-            self.httpMethod = "GET"
-            self.addValue("X-Naver-Client-Id", forHTTPHeaderField: "hTtuI5V7tXcLQFKzVbpb")
-            self.addValue("X-Naver-Client-Secret", forHTTPHeaderField: "6Ns6aTsWC0")
         case .post(let body):
             self.httpMethod = "POST"
             self.addValue("application/json", forHTTPHeaderField: "content-type")
@@ -52,6 +64,8 @@ extension URLRequest {
         case .patchForm(let body):
             self.httpMethod = "PATCH"
             self.httpBody = body as? Data
+        default:
+            break
         }
     }
 }

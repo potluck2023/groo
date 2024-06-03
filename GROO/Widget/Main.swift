@@ -8,42 +8,38 @@
 import SwiftUI
 
 struct Main: View {
-    @State private var selection: MainTabBar = .home
+    @State private var selection: MainTabBar
+    
+    init(selection: MainTabBar = .home) {
+        _selection = .init(initialValue: selection)
+    }
     
     var body: some View {
-        if #available(iOS 16.0, *) {
-            NavigationStack {
-                content
-            }
-        } else {
-            NavigationView {
-                content
-            }
+        TabView(selection: $selection) {
+            HomePage()
+                .tag(MainTabBar.home)
+                .tabItem { tabItem(.home) }
+            
+            SearchPage()
+                .tag(MainTabBar.search)
+                .tabItem { tabItem(.search) }
+            
+            RecordPage()
+                .tag(MainTabBar.note)
+                .tabItem { tabItem(.note) }
+            
+            UserPage()
+                .tag(MainTabBar.user)
+                .tabItem { tabItem(.user) }
         }
     }
     
-    private var content: some View {
-        VStack(spacing: 0) {
-            switch selection {
-            case .home:
-                HomePage()
-            case .search:
-                SearchPage()
-            case .note:
-                RecordPage()
-            case .user:
-                UserPage()
-            }
-            CustomTabBar(selection: $selection)
-        }
-        .font(.notoSansKR(.medium))
-        .foregroundColor(Color(hex: 0xEFEFEF))
-        .background(Color.background)
+    private func tabItem(_ tab: MainTabBar) -> some View {
+        Image(tab.icon)
+            .foregroundStyle(selection == tab ? Color(hex: 0xEFEFEF) : Color(hex: 0xA2A2A2))
     }
 }
 
-struct Main_Previews: PreviewProvider {
-    static var previews: some View {
-        Main()
-    }
+#Preview {
+    Main()
 }

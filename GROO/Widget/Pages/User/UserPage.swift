@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct UserPage: View {
+    @StateObject private var pathModel: PathModel
+    
+    init(pathModel: PathModel = .init()) {
+        _pathModel = .init(wrappedValue: pathModel)
+    }
+    
     var body: some View {
-        VStack(spacing: 24) {
-            header
-            profile
-            settingMenu
-            privateMenu
-            Spacer()
+        NavigationStack(path: $pathModel.paths) {
+            VStack(spacing: 24) {
+                header
+                profile
+                settingMenu
+                privateMenu
+                Spacer()
+            }
         }
     }
     
@@ -130,10 +138,8 @@ struct UserPage: View {
     }
 }
 
-struct UserPage_Previews: PreviewProvider {
-    static var previews: some View {
-        UserPage()
-            .foregroundColor(Color(hex: 0xEFEFEF))
-            .background(Color.background)
-    }
+#Preview {
+    UserPage()
+        .foregroundColor(Color(hex: 0xEFEFEF))
+        .background(Color.background)
 }

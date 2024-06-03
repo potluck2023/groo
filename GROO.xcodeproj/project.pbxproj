@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		633F00002BD29B78006CFFA7 /* PathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633FFFFF2BD29B78006CFFA7 /* PathType.swift */; };
+		633F00022BD29CBC006CFFA7 /* PathModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633F00012BD29CBC006CFFA7 /* PathModel.swift */; };
 		63691A0A29EBDB8500EE2A2E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63691A0C29EBDB8500EE2A2E /* Localizable.strings */; };
 		63AE5F832A660F3E003DAC75 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE5F3E2A660F3E003DAC75 /* AccountRepository.swift */; };
 		63AE5F842A660F3E003DAC75 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE5F412A660F3E003DAC75 /* ButtonStyle.swift */; };
@@ -87,6 +89,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		633F00012BD29CBC006CFFA7 /* PathModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathModel.swift; sourceTree = "<group>"; };
+		633FFFFF2BD29B78006CFFA7 /* PathType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathType.swift; sourceTree = "<group>"; };
 		63691A0B29EBDB8500EE2A2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		63691A0D29EBDBA900EE2A2E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		63AE5F3E2A660F3E003DAC75 /* AccountRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
@@ -179,6 +183,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		633FFFFC2BD28C78006CFFA7 /* Path */ = {
+			isa = PBXGroup;
+			children = (
+				633FFFFF2BD29B78006CFFA7 /* PathType.swift */,
+				633F00012BD29CBC006CFFA7 /* PathModel.swift */,
+			);
+			path = Path;
+			sourceTree = "<group>";
+		};
 		63AE5F3C2A660F3E003DAC75 /* GROO */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +200,7 @@
 				63AE5F782A660F3E003DAC75 /* Model */,
 				63AE5F702A660F3E003DAC75 /* Extensions */,
 				63AE5F3D2A660F3E003DAC75 /* Repository */,
+				633FFFFC2BD28C78006CFFA7 /* Path */,
 				63AE5F3F2A660F3E003DAC75 /* Widget */,
 				63AE5F692A660F3E003DAC75 /* Util */,
 				63AE5F812A660F3E003DAC75 /* GROOApp.swift */,
@@ -662,7 +676,9 @@
 				63AE5F852A660F3E003DAC75 /* Dropdown.swift in Sources */,
 				63AE5F962A660F3E003DAC75 /* SearchPage.swift in Sources */,
 				63AE5F942A660F3E003DAC75 /* HomeToggle.swift in Sources */,
+				633F00022BD29CBC006CFFA7 /* PathModel.swift in Sources */,
 				63AE5F892A660F3E003DAC75 /* CustomTabBar.swift in Sources */,
+				633F00002BD29B78006CFFA7 /* PathType.swift in Sources */,
 				63AE5FA42A660F3E003DAC75 /* UIApplication+Extension.swift in Sources */,
 				63AE5F922A660F3E003DAC75 /* BookshelfView.swift in Sources */,
 				63AE5F882A660F3E003DAC75 /* CustomButton.swift in Sources */,
@@ -864,7 +880,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -872,9 +888,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.potluck.groo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -894,7 +914,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -902,9 +922,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.potluck.groo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -8,18 +8,35 @@
 import SwiftUI
 
 struct SearchField: View {
-    @Binding var text: String
-    @FocusState var focusField: Bool
-    var placeholder: String
+    @Binding private var text: String
+    @FocusState private var focusField: Bool
+    private let placeholder: String
+    private let onSubmit: () -> Void
+    
+    init(
+        _ text: Binding<String>,
+        _ focusField: FocusState<Bool>,
+        placeholder: String,
+        onSubmit: @escaping () -> Void
+    ) {
+        _text = text
+        _focusField = focusField
+        self.placeholder = placeholder
+        self.onSubmit = onSubmit
+    }
     
     var body: some View {
         HStack(spacing: 0) {
             ZStack(alignment: .leading) {
                 Text(LocalizedStringKey(placeholder))
                     .font(.notoSansKR(.medium, size: 14))
-                    .foregroundColor(Color(hex: 0x696969))
+                    .foregroundStyle(text.isEmpty ? Color(hex: 0x696969) : .clear)
+                
                 TextField("", text: $text)
                     .focused($focusField)
+                    .onSubmit {
+                        onSubmit()
+                    }
             }
             .padding(.vertical, 8)
             .padding(.leading)

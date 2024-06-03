@@ -13,14 +13,34 @@ protocol APIServiceProtocol {
 
 class APIService: APIServiceProtocol {
     func checkResponse(response: URLResponse, data: Data) throws {
-        guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw AuthenticationError.invalidCredentials
+        }
+        
+        guard 200..<300 ~= httpResponse.statusCode else {
             let error = try? JSONDecoder().decode(ErrorMessage.self, from: data)
             
-            if let error {
+            if let error = error {
                 throw AuthenticationError.custom(error)
-            } else {
-                throw AuthenticationError.invalidCredentials
             }
+            
+            throw AuthenticationError.invalidCredentials
+        }
+    }
+    
+    func checkNaverResponse(response: URLResponse, data: Data) throws {
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw AuthenticationError.invalidCredentials
+        }
+        
+        guard 200..<300 ~= httpResponse.statusCode else {
+            let error = try? JSONDecoder().decode(NaverError.self, from: data)
+            
+            if let error = error {
+                throw error
+            }
+            
+            throw AuthenticationError.invalidCredentials
         }
     }
 }

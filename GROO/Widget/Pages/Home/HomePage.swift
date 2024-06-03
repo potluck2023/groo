@@ -26,37 +26,36 @@ class HomeViewModel: ObservableObject {
 }
 
 struct HomePage: View {
-    @StateObject private var viewModel = HomeViewModel()
+    @StateObject private var pathModel: PathModel
+    @StateObject private var viewModel: HomeViewModel
     
-    var body: some View {
-        Group {
-            if #available(iOS 16.0, *) {
-                NavigationStack {
-                    content
-                }
-            } else {
-                NavigationView {
-                    content
-                }
-            }
-        }
-        .font(.notoSansKR(.bold))
+    init(
+        pathModel: PathModel = .init(),
+        viewModel: HomeViewModel = .init()
+    ) {
+        _pathModel = .init(wrappedValue: pathModel)
+        _viewModel = .init(wrappedValue: viewModel)
     }
     
-    private var content: some View {
-        VStack(spacing: 0) {
-            header
-                .padding(.top, 32)
-            
-            switch viewModel.homeType {
-            case .card:
-                CardView()
+    var body: some View {
+        NavigationStack(path: $pathModel.paths) {
+            VStack(spacing: 0) {
+                header
                     .padding(.top, 32)
-            case .bookshelf:
-                BookshelfView()
-                    .padding(.top, 24)
+                
+                switch viewModel.homeType {
+                case .card:
+                    CardView()
+                        .padding(.top, 32)
+                case .bookshelf:
+                    BookshelfView()
+                        .padding(.top, 24)
+                }
             }
+            .foregroundStyle(.white)
+            .background(Color.background)
         }
+        .font(.notoSansKR(.bold))
     }
     
     private var header: some View {
@@ -80,8 +79,6 @@ struct HomePage: View {
 //    }
 }
 
-struct HomePage_Previews: PreviewProvider {
-    static var previews: some View {
-        HomePage()
-    }
+#Preview {
+    HomePage()
 }

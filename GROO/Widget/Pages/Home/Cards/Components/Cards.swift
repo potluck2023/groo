@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct PeriodPicker: View {
+    
+    @State private var showSheet: Bool = false
+    
     var body: some View {
         VStack(spacing: 8) {
             Image("calendar")
@@ -21,6 +24,59 @@ struct PeriodPicker: View {
         .frame(width: 72, height: 72)
         .background(Color(hex: 0xEFEFEF))
         .cornerRadius(9)
+        .onTapGesture {
+            showSheet = true
+        }
+        .sheet(isPresented: $showSheet) {
+            VStack(spacing: 0) {
+                VStack(spacing: 16) {
+                    Text("원하는 기간을 선택해주세요")
+                        .font(.notoSansKR(.medium, size: 16))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    HStack(spacing: 24) {
+                        Group {
+                            Text("전체")
+                            Text("1년")
+                            Text("6개월")
+                        }
+                        .frame(width: 80, height: 30)
+                        .background(Color(hex: 0xEFEFEF))
+                        .clipShape(.capsule)
+                    }
+                    
+                    HStack(spacing: 24) {
+                        Group {
+                            Text("3개월")
+                            Text("1개월")
+                        }
+                        .frame(width: 80, height: 30)
+                        .background(Color(hex: 0xEFEFEF))
+                        .clipShape(.capsule)
+                    }
+                }
+                .font(.notoSansKR(.medium, size: 12))
+                .padding(.init(top: 20, leading: 24, bottom: 36, trailing: 24))
+                
+                HStack(spacing: 19) {
+                    Group {
+                        Text("취소")
+                        Text("저장")
+                    }
+                    .font(.notoSansKR(.medium, size: 16))
+                    .frame(width: 142, height: 50)
+                    .background(Color(hex: 0xEFEFEF))
+                    .clipShape(.capsule)
+                }
+                .padding(.vertical, 19)
+                .padding(.horizontal, 36)
+                
+                Spacer()
+            }
+            .padding(.top, 35)
+            .presentationDetents([.height(293)])
+            .background(Color.background)
+        }
     }
 }
 
@@ -54,7 +110,7 @@ struct BooksRead: View {
     }
 }
 
-struct MyThought: View {
+struct MonthlyReadingTimeView: View {
     @Binding var readCount: Int
     
     var body: some View {
@@ -75,24 +131,24 @@ struct MyThought: View {
             .cornerRadius(9)
         } else {
             HStack(spacing: 14) {
-                VStack(spacing: 12) {
+                VStack(alignment: .leading, spacing: 21) {
                     HStack(spacing: 0) {
-                        Text("myThought")
+                        Text("이번 달 독서 시간")
+                            .font(.notoSansKR(.medium, size: 14))
                         Spacer()
                         Image("arrow")
                     }
-                    Text("개인적으로 이 만화를 보면서 책을 사랑하는 마음이 커졌다. 여우와 인간의 이야기를 통해 책이 가지는 매력과 그 중요성을 깨")
+                    .foregroundStyle(Color(hex: 0xEFEFEF))
+                    
+                    Text("6시간 24분")
+                        .font(.notoSansKR(.medium, size: 32))
+                        .foregroundStyle(Color(hex: 0xEFEFEF))
+                        
+                    Text("지난 달보다\n32분 더 독서했어요.")
                         .font(.notoSansKR(.medium, size: 14))
-                        .lineLimit(4)
-                        .multilineTextAlignment(.leading)
-                    HStack(spacing: 0) {
-                        Text("책먹는 여우")
-                        Spacer()
-                        Text("23/10/21")
-                    }
-                    .font(.notoSansKR(.medium, size: 14))
+                        .foregroundStyle(Color(hex: 0xD6D6D6))
                 }
-                .padding(.horizontal)
+                .padding(.horizontal, 16)
                 .padding(.vertical, 14)
                 .background(Color(hex: 0x434343))
                 .cornerRadius(9)
@@ -108,14 +164,15 @@ struct MyThought: View {
     }
 }
 
-struct Cards_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            HStack {
-                PeriodPicker()
-                BooksRead(readCount: .constant(0))
-            }
-            MyThought(readCount: .constant(0))
+#Preview {
+    VStack {
+        HStack {
+            PeriodPicker()
+            BooksRead(readCount: .constant(0))
         }
+        MonthlyReadingTimeView(readCount: .constant(0))
+        
+        MonthlyReadingTimeView(readCount: .constant(1))
+            .frame(height: 180)
     }
 }

@@ -8,27 +8,45 @@
 import SwiftUI
 
 struct SearchPage: View {
-    @State var text: String = ""
-    @State var isEmpty: Bool = true
+    @StateObject private var pathModel: PathModel
+    @StateObject private var searchData = SearchData()
+    @State private var text: String
+    @State private var isEmpty: Bool
     
     @FocusState private var focusField: Bool
     
+    init(
+        pathModel: PathModel = .init(),
+        text: String = "",
+        isEmpty: Bool = true
+    ) {
+        _pathModel = .init(wrappedValue: pathModel)
+        _text = .init(initialValue: text)
+        _isEmpty = .init(initialValue: isEmpty)
+    }
+    
     var body: some View {
-        VStack(spacing: 0) {
-            header
-            
-            if isEmpty {
-                Spacer()
-                emptyView
-                Spacer()
+        NavigationStack(path: $pathModel.paths) {
+            VStack(spacing: 0) {
+                header
+                
+                if isEmpty {
+                    Spacer()
+                    emptyView
+                    Spacer()
+                }
             }
+            .foregroundStyle(Color(hex: 0xEFEFEF))
+            .background(Color.background)
         }
     }
     
     private var header: some View {
         HStack(spacing: 10) {
             dropdown
-            SearchField(text: $text, focusField: _focusField, placeholder: "searchBook")
+            SearchField($text, _focusField, placeholder: "searchBook") {
+                searchData.process(.search(text: text))
+            }
         }
         .padding(.vertical, 32)
         .padding(.horizontal, 24)
@@ -58,9 +76,6 @@ struct SearchPage: View {
     }
 }
 
-struct SearchPage_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchPage()
-            .background(Color.background)
-    }
+#Preview {
+    Main(selection: .search)
 }

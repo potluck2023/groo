@@ -18,7 +18,7 @@ struct CardView: View {
                         PeriodPicker()
                         BooksRead(readCount: $readCount)
                     }
-                    MyThought(readCount: $readCount)
+                    MonthlyReadingTimeView(readCount: $readCount)
                 }
                 ReadingBooks()
                 NextReadBooks()
@@ -28,9 +28,7 @@ struct CardView: View {
     }
 }
 
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView()
-            .background(Color.background)
-    }
+#Preview {
+    CardView()
+        .background(Color.background)
 }

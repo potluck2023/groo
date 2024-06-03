@@ -33,11 +33,11 @@ class SearchRepository: SearchRepositoryProtocol {
         if let sort { queryItems.append(URLQueryItem(name: "sort", value: "\(sort)")) }
         let endpoint = Endpoint.search(query: queryItems)
         
-        guard var urlRequest = try? URLRequest(url: endpoint.naver, method: .getNaver) else { throw URLError(.badURL) }
+        let urlRequest = URLRequest(url: endpoint.naver, method: .getNaver)
         
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         
-        try APIService().checkResponse(response: response, data: data)
+        try APIService().checkNaverResponse(response: response, data: data)
         
         return try JSONDecoder().decode(BookList.self, from: data)
     }
