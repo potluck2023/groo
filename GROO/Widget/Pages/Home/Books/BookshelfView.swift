@@ -32,13 +32,15 @@ struct BookshelfView: View {
                     .font(.notoSansKR(.bold, size: 32))
             }
             Spacer()
-            Dropdown {
-                HStack {
-                    Text("all")
-                    Image("arrow")
-                        .rotationEffect(.degrees(90))
-                }
-            }
+            // TODO: Dropdown
+            Text("Dropdown")
+//            Dropdown {
+//                HStack {
+//                    Text("all")
+//                    Image("arrow")
+//                        .rotationEffect(.degrees(90))
+//                }
+//            }
         }
         .padding(.vertical, 20)
         .padding(.horizontal, 32)

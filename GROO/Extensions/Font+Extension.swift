@@ -10,10 +10,13 @@ import SwiftUI
 extension Font {
     enum NotoSansKR {
         case black
+        case extraBold
         case bold
-        case light
+        case semibold
         case medium
         case regular
+        case light
+        case extraLight
         case thin
         case custom(String)
         
@@ -21,19 +24,24 @@ extension Font {
             switch self {
             case .black:
                 return "NotoSansKR-Black"
+            case .extraBold:
+                return "NotoSansKR-ExtraBold"
             case .bold:
                 return "NotoSansKR-Bold"
-            case .light:
-                return "NotoSansKR-Light"
+            case .semibold:
+                return "NotoSansKR-SemiBold"
             case .medium:
                 return "NotoSansKR-Medium"
             case .regular:
                 return "NotoSansKR-Regular"
+            case .extraLight:
+                return "NotoSansKR-ExtraLight"
+            case .light:
+                return "NotoSansKR-Light"
             case .thin:
                 return "NotoSansKR-Thin"
-            case .custom(let name):
+            case let .custom(name):
                 return name
-            
             }
         }
     }

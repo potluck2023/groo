@@ -75,14 +75,16 @@ struct RecordPage: View {
     }
     
     private var dropdown: some View {
-        Dropdown(borderColor: .clear, backgroundColor: Color(hex: 0x333333)) {
-            HStack {
-                Text("title")
-                    .font(.notoSansKR(.medium, size: 14))
-                Image("arrow")
-                    .rotationEffect(.degrees(90))
-            }
-        }
+        // TODO: Dropdown
+        Text("Dropdown")
+//        Dropdown(borderColor: .clear, backgroundColor: Color(hex: 0x333333)) {
+//            HStack {
+//                Text("title")
+//                    .font(.notoSansKR(.medium, size: 14))
+//                Image("arrow")
+//                    .rotationEffect(.degrees(90))
+//            }
+//        }
     }
     
     private var result: some View {

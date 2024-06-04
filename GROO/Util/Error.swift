@@ -22,6 +22,23 @@ struct ErrorMessage: Codable, Error {
     }
 }
 
+enum NetworkingError: LocalizedError {
+    case badURLResponse
+    case serverError
+    case decodeFail
+    case unknown
+    
+    // TODO: error message
+    var errorDescription: String? {
+        switch self {
+        case .badURLResponse: return "Bad response from URL"
+        case .serverError: return "ServerError"
+        case .decodeFail: return "decode fail"
+        case .unknown: return "Unknown error occured"
+        }
+    }
+}
+
 struct NaverError: Decodable, Error {
     let code: String
     let message: String

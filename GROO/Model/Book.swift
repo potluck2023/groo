@@ -7,31 +7,56 @@
 
 import Foundation
 
-struct Book: Codable {
-    let id: UUID = UUID()
+struct Book: Codable, Hashable {
+    let id: UUID
     let title: String
-    let link: String
-    let image: String
-    let author: String
-    let discount: String
+    let imageURL: String
+    let authors: String
     let publisher: String
-    let pubdate: String
+    let publicationYear: String
     let isbn: String
-    let description: String
     
-    private enum CodingKeys: String, CodingKey {
-        case title, link, image, author, discount, publisher, pubdate, isbn, description
+    init(
+        id: UUID = .init(),
+        title: String = "",
+        imageURL: String = "",
+        authors: String = "",
+        publisher: String = "",
+        publicationYear: String = "",
+        isbn: String = ""
+    ) {
+        self.id = id
+        self.title = title
+        self.imageURL = imageURL
+        self.authors = authors
+        self.publisher = publisher
+        self.publicationYear = publicationYear
+        self.isbn = isbn
     }
 }
 
-struct BookList: Codable {
-    let lastBuildDate: String
-    let total: Int
-    let start: Int
-    let display: Int
-    let items: [Book]
+struct BookList {
+    let totalCount: Int
+    let contents: [Book]
+}
+
+struct Doc: Codable {
+    let doc: Book
+}
+
+struct Docs: Codable {
+    let numFound: Int
+    let docs: [Doc]
     
     private enum CodingKeys: String, CodingKey {
-        case lastBuildDate, total, start, display, items
+        case numFound, docs
+    }
+}
+
+struct LibraryResponse: Codable {
+    let response: Docs
+    
+    private enum CodingKeys: String, CodingKey {
+        case response
     }
 }

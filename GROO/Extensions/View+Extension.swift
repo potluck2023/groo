@@ -20,6 +20,10 @@ extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
     }
+    
+    func colorBorder(_ color: Color = .black, cornerRadius: CGFloat = 0) -> some View {
+        modifier(ColorBorder(color, cornerRadius: cornerRadius))
+    }
 }
 
 struct RoundedCorner: Shape {

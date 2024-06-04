@@ -33,17 +33,33 @@ struct SearchField: View {
                     .foregroundStyle(text.isEmpty ? Color(hex: 0x696969) : .clear)
                 
                 TextField("", text: $text)
+                    .font(.notoSansKR(.medium, size: 14))
                     .focused($focusField)
                     .onSubmit {
+                        focusField = false
                         onSubmit()
                     }
             }
-            .padding(.vertical, 8)
-            .padding(.leading)
-            Image("search")
-                .padding(9.5)
-                .foregroundColor(Color(hex: 0xEFEFEF))
+            
+            searchButton
         }
-        .modifier(ColorBorder(Color(hex: 0x696969), cornerRadius: 40))
+        .padding(.horizontal, 16)
+        .frame(height: 35)
+        .colorBorder(Color(hex: 0x696969), cornerRadius: 40)
     }
+    
+    // MARK: - buttons
+    private var searchButton: some View {
+        Image(.search)
+            .frame(width: 16, height: 16)
+            .contentShape(.rect)
+            .onTapGesture {
+                focusField = false
+                onSubmit()
+            }
+    }
+}
+
+#Preview {
+    SearchField(.constant(""), .init(), placeholder: "", onSubmit: { })
 }
