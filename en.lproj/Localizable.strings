@@ -1,0 +1,263 @@
+/*
+  Localizable.strings
+  GROO
+
+  Created by 이예주 on 2023/04/16.
+  
+*/
+
+// MARK: - Common
+"next" = "다음";
+
+"save" = "저장";
+
+"ok" = "확인";
+
+"all" = "전체";
+
+"cancel" = "취소";
+
+"back" = "뒤로";
+
+"apply" = "적용";
+
+"do %@" = "%@하기";
+
+"done" = "완료";
+
+"default" = "기본";
+
+
+// MARK: - Account
+"or" = "또는";
+
+"login" = "로그인";
+
+"register" = "회원 가입";
+
+"goToRegister" = "회원 가입하기";
+
+"forgotPassword?" = "비밀번호를 잊으셨나요?";
+
+"sendEmail" = "인증메일 보내기";
+
+"welcome000" = "000에 오신 것을\n 환영합니다";
+
+"allAgreement" = "전체동의";
+
+"required" = "필수";
+
+"termsOfService" = "서비스 이용약관";
+
+"privacyPolicy" = "개인정보 수집 및 이용동의";
+
+"passwordReset" = "비밀번호 초기화";
+
+"newPassword" = "새 비밀번호";
+
+"emailVerification" = "이메일 인증";
+
+"authCodeNotReceived" = "인증 코드를 받지 못하셨나요?";
+
+// Error
+"nameDuplicatedError" = "이미 사용 중인 닉네임입니다. 다른 닉네임을 입력해 주세요.";
+
+"emailDuplicatedError" = "이미 사용 중인 이메일 주소입니다. 다른 이메일 주소를 입력해 주세요.";
+
+"emailNotRegisteredError" = "가입된 적 없는 이메일 주소입니다. 이메일 주소를 다시 한번 확인해주세요";
+
+"passwordRegexError" = "비밀번호 형식이 올바르지 않습니다.";
+
+
+// MARK: - Home
+"myLibrary" = "내 서재";
+
+"%lldMonth" = "%lld개월";
+
+"myThought" = "나의 생각";
+
+"favoriteGenre" = "선호 장르";
+
+"booksRead" = "읽은 책";
+
+"readingBook" = "읽고 있는 책";
+
+"viewAll" = "전체 보기";
+
+"nextReadBook" = "다음에 읽을 책";
+
+"readingFinish" = "독서 완료";
+
+"recordingThought" = "생각 기록";
+
+"booksHasReadSoFar" = "지금까지 읽은 책";
+
+"%lldBooks" = "%lld권";
+
+"books" = "권";
+
+
+// MARK: - CardView
+"organizeYourThoughts" = "책을 읽으면서 드는 생각을 정리해보세요.";
+
+"recordThought" = "생각 기록하기";
+
+"recordReadingBooks" = "읽고 있는 책을 기록해보세요";
+
+"recordBook" = "책 기록하기";
+
+// MARK: - BookshelfView
+"searchAndRecordBook" = "책을 검색하여\n지금까지 읽은 책을 기록해보세요";
+
+// MARK: SearchPage
+"title" = "제목";
+
+"searchBook" = "책을 검색하세요";
+
+"searchBooksDescription" = "책을 검색해 내 독서를 기록하거나\n책에 대한 생각을 노트에 작성해보세요";
+
+"resultBooks %lld" = "%lld권의 검색 결과";
+
+"cannotFindBook" = "찾는 책이 없나요?";
+
+"requestBookRegistration" = "책 등록 요청하기";
+
+"emptySearchResult" = "검색 결과가 없습니다";
+
+"bookDetail" = "도서 상세보기";
+
+"author %@" = "%@ 저";
+
+"publishedBy %@" = "%@ 출판";
+
+"page %lld" = "%lld 페이지";
+
+"relatedBooks" = "연관 작품";
+
+"otherBooksofAuthor" = "이 작가의 다른 작품";
+
+"otherBooksofPubisher" = "이 출판사의 다른 작품";
+
+"otherBooksofSameClassification" = "동일 장르 작품";
+
+"readingStatus" = "독서 상태";
+
+"startingReading" = "독서 시작";
+
+"startReading" = "독서 시작하기";
+
+"completeReading" = "독서 완료";
+
+"restartReading" = "다시 독서하기";
+
+"beforeReading" = "독서 전";
+
+"reading" = "독서 중";
+
+"readingDate" = "독서 일자";
+
+"startDate" = "시작일";
+
+"endDate" = "종료일";
+
+"selectStartDate" = "시작일을 선택해주세요";
+
+"selectEndDate" = "종료일을 선택해주세요";
+
+"leaveBriefNote" = "책에 대해 간단히 메모를 남겨 보세요";
+
+"feelFreeToWriteDown" = "자유롭게 메모해 주세요";
+
+// MARK: - Thinking Note
+"thinkingNote" = "생각노트";
+
+"writeThinkingsofBook" = "책에 대한 생각을 기록해 보세요";
+
+"writeThinkingNote" = "생각노트 작성";
+
+"feelFreeToWriteThinkings" = "자유롭게 책에 대한 생각을 표현해보세요";
+
+"selectPage" = "기록하고 싶은 페이지를 선택해주세요";
+
+// MARK: - RecordPage
+"readingRecord" = "독서기록";
+
+"totalBooks %lld" = "총 %lld개의 책";
+
+"totalNotes %lld" = "총 %lld개의 노트";
+
+"selectDuration" = "원하는 기간을 선택해주세요";
+
+"1Year" = "1년";
+
+"6Months" = "6개월";
+
+"3Months" = "3개월";
+
+"1Month" = "1개월";
+
+"setDuration" = "기간 지정";
+
+"selectDurationSetting" = "기간 지정 선택";
+
+"setSearchCriteriaOfReadingRecord" = "독서기록 검색 기준을 설정해주세요";
+
+"setSearchCriteriaOfThinkingNote" = "생각노트 검색 기준을 설정해주세요";
+
+"author" = "작가";
+
+"genre" = "장르";
+
+"publisherName" = "출판사명";
+
+"memo" = "메모";
+
+
+// MARK: - UserPage
+"myAccount" = "내 계정";
+
+"homeSetting" = "홈 설정";
+
+"notice" = "공지사항";
+
+"sendFeedback" = "피드백 전송하기";
+
+"terms" = "이용약관";
+
+"version" = "버전 정보";
+
+"logout" = "로그아웃";
+
+"withdraw" = "탈퇴하기";
+
+"profileEdit" = "프로필 수정";
+
+"nickname" = "닉네임";
+
+"selectHomeMainView" = "홈 메인 뷰를 선택해주세요";
+
+"selectedViewIsExposedToFirstScreen" = "선택한 뷰가 첫 화면으로 노출됩니다";
+
+"bookshelf" = "서가";
+
+
+// MARK: - classification table
+"generalWorks" = "총류";
+
+"philosophy" = "철학";
+
+"religion" = "종교";
+
+"socialScience" = "사회과학";
+
+"science" = "자연과학";
+
+"technology" = "기술과학";
+
+"arts" = "예술";
+
+"language" = "언어";
+
+"literature" = "문학";
+
+"history" = "역사";
